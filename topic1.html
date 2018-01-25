@@ -27,19 +27,19 @@
 <br>The example also uses a conditional "if" statement to decide when to use the comma delimiter.
 </p>
 <p>Code Snippit<br><pre>
-		function countToTen(){
-			var exampleText="While Ouput: ";
-			var iterator = 1;
-			var x = document.getElementById("whileOutput")
-			while (iterator <= 10) {
-				exampleText+= iterator;
-				if (iterator != 10) {
-					exampleText+= ", ";
-				}
-				iterator++;
+	function countToTen(){
+		var exampleText="While Ouput: ";
+		var iterator = 1;
+		var x = document.getElementById("whileOutput")
+		while (iterator <= 10) {
+			exampleText+= iterator;
+			if (iterator != 10) {
+				exampleText+= ", ";
 			}
-			x.innerHTML = exampleText;
+			iterator++;
 		}
+		x.innerHTML = exampleText;
+	}
 </pre></p>
 <p id="whileOutput"></p>
 </body>
