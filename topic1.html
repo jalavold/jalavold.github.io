@@ -3,9 +3,9 @@
 <head>
 	<script>
 		function countToTen(){
-			var exampleText="Example Ouput: ";
+			var exampleText="While Ouput: ";
 			var iterator = 1;
-			var x = document.getElementById("exampleOutput")
+			var x = document.getElementById("whileOutput")
 			while (iterator <= 10) {
 				exampleText+= iterator;
 				if (iterator != 10) {
@@ -22,16 +22,16 @@
 <br>
 <p>Loops - There are several types of looping statements supported in JavaScript.  These types are: while, do/while, for, and for/in </p>
 <br>
-<p>While loop Example: <button type="button" onclick="countToTen()"> Run Example</button>
+<p>While loop example: <button type="button" onclick="countToTen()"> Run Example</button>
 <br>This example counts from 1 to 10 and appends the number to a variable that is comma delimited.
 <br>The example also uses a conditional "if" statement to decide when to use the comma delimiter.
 </p>
 
 <p>Code Snippit<br><pre>
 		function countToTen(){
-			var exampleText="Example Ouput: ";
+			var exampleText="While Ouput: ";
 			var iterator = 1;
-			var x = document.getElementById("exampleOutput")
+			var x = document.getElementById("whileOutput")
 			while (iterator <= 10) {
 				exampleText+= iterator;
 				if (iterator != 10) {
@@ -42,7 +42,7 @@
 			x.innerHTML = exampleText;
 		}
 </pre></p>
-<p id="exampleOutput"></p>
+<p id="whileOutput"></p>
 
 
 </body>
