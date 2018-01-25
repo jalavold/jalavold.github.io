@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<script>
+	function countToTen(){
+		var exampleText="";
+		var iterator = 1;
+		while (iterator <= 10) {
+			example+= iterator;
+			if (iterator !=10) {
+				example=+ ", ";
+			}
+		}
+		document.getElementByID("").innerHTML = exampleText;
+	}
+</head>
 <body>
 <h1>Topic 1 - JavaScript - Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</h1>
 <br>
@@ -9,5 +23,8 @@
 <br>
 <p>While loop Example:</p>
 <br>
+<button onclick="countToTen()">Run Example</button>
+<p id="exampleOutput"></p>
+
 </body>
 </html>
