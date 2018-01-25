@@ -3,8 +3,9 @@
 <head>
 	<script>
 		function countToTen(){
-			var exampleText="";
+			var exampleText="Example Ouput: ";
 			var iterator = 1;
+			var x = document.getElementById("exampleOutput")
 			while (iterator <= 10) {
 				exampleText+= iterator;
 				if (iterator != 10) {
@@ -12,7 +13,7 @@
 				}
 				iterator++;
 			}
-			document.getElementByID("exampleOutput").innerHTML = exampleText;
+			x.innerHTML = exampleText;
 		}
 	</script>
 </head>
@@ -23,10 +24,24 @@
 <br>
 <p>On this page I will demonstrate a simple example of each type.</p>
 <br>
-<p>While loop Example:</p>
-<br>
-<button onclick="countToTen()">Run Example</button>
+<p>While loop Example: <button type="button" onclick="countToTen()"> Run Example</button></p>
+<p>Code Snippit<br><pre>
+		function countToTen(){
+			var exampleText="Example Ouput: ";
+			var iterator = 1;
+			var x = document.getElementById("exampleOutput")
+			while (iterator <= 10) {
+				exampleText+= iterator;
+				if (iterator != 10) {
+					exampleText+= ", ";
+				}
+				iterator++;
+			}
+			x.innerHTML = exampleText;
+		}
+</pre></p>
 <p id="exampleOutput"></p>
+
 
 </body>
 </html>
