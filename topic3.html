@@ -15,7 +15,7 @@
                     xmlhttp.send();
                     function writetable (jsonDataObj, htmltable){
                         htmltable = "<table>";
-                        for (movie in jsonDataObj){
+                        for (movie in jsonDataObj.movie){
                             htmltable += "<tr><td>" + movie.id + "</td><td>" + movie.title + "</td><td>" + movie.year + "</td><td>";
                             for (genre in movie.genre) {
                                 htmltable += genre + ",";
