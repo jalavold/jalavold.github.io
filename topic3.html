@@ -8,20 +8,24 @@
                         if (this.readyState == 4 && this.status == 200) {
                             jsonDataObj = JSON.parse(this.responseText);
                             //document.getElementById("test").innerHTML = jsonDataObj.movie[0].genre[1];
+                            writetable(jsonDataObjk,htmltable)
                             }
                         };
                     xmlhttp.open("GET", "movies.json");
                     xmlhttp.send();
-                    htmltable = "<table>";
-                    for (movie in jsonDataObj){
-                        htmltable += "<tr><td>" + movie.id + "</td><td>" + movie.title + "</td><td>" + movie.year + "</td><td>";
-                        for (genre in movie.genre) {
-                            htmltable += genre + ",";
+                    function writetable (jsonDataObj, htmltable){
+                        htmltable = "<table>";
+                        for (movie in jsonDataObj){
+                            htmltable += "<tr><td>" + movie.id + "</td><td>" + movie.title + "</td><td>" + movie.year + "</td><td>";
+                            for (genre in movie.genre) {
+                                htmltable += genre + ",";
+                            };
+                            htmltable += "</td></tr>";
                         };
-                        htmltable += "</td></tr>";
-                    };
-                    htmltable += "</table>";
-                    document.getElementById("test").innerHTML = htmltable;
+                        htmltable += "</table>";
+                        document.getElementById("test").innerHTML = htmltable;
+                    }
+
         
                 </script>
     </head>
