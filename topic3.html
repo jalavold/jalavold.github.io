@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <script>
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var jsonDataObj = JSON.parse(this.responseText);
+                    }
+                };
+            xmlhttp.open("GET", "movies.json");
+            xmlhttp.send();
+            document.getElementById("test").innerHTML = jsonDataObj[0].genre[0];
+
+        </script>
+    </head>
 <body>
 <h1>Topic 3 - JSON Parse and Stringify</h1>
-
+<p id="test"></p>
 </body>
 </html>
