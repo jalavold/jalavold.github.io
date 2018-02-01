@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script>
+
+    </head>
+<body>
+    <script>
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
@@ -13,8 +16,6 @@
             document.getElementById("test").innerHTML = jsonDataObj.movies.movie[0].genre[1];
 
         </script>
-    </head>
-<body>
 <h1>Topic 3 - JSON Parse and Stringify</h1>
 <p id="test"></p>
 </body>
