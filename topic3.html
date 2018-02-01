@@ -9,11 +9,12 @@
             xmlhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     var jsonDataObj = JSON.parse(this.responseText);
+                    document.getElementById("test").innerHTML = jsonDataObj[0].genre[1];
                     }
                 };
             xmlhttp.open("GET", "movies.json");
             xmlhttp.send();
-            document.getElementById("test").innerHTML = jsonDataObj[0].genre[1];
+            
 
         </script>
 <h1>Topic 3 - JSON Parse and Stringify</h1>
