@@ -13,7 +13,7 @@
                 };
             xmlhttp.open("GET", "movies.json");
             xmlhttp.send();
-            document.getElementById("test").innerHTML = jsonDataObj.movies.movie[0].genre[1];
+            document.getElementById("test").innerHTML = jsonDataObj[0].movies[0].movie[0].genre[1];
 
         </script>
 <h1>Topic 3 - JSON Parse and Stringify</h1>
