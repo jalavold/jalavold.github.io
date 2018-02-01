@@ -8,7 +8,7 @@
                         if (this.readyState == 4 && this.status == 200) {
                             jsonDataObj = JSON.parse(this.responseText);
                             //document.getElementById("test").innerHTML = jsonDataObj.movie[0].genre[1];
-                            writetable(jsonDataObj,htmltable)
+                            writetable(jsonDataObj,htmltable);
                             }
                         };
                     xmlhttp.open("GET", "movies.json");
