@@ -10,7 +10,7 @@
                 };
             xmlhttp.open("GET", "movies.json");
             xmlhttp.send();
-            document.getElementById("test").innerHTML = jsonDataObj.movie[0];
+            document.getElementById("test").innerHTML = jsonDataObj.movies.movie[0].genre[1];
 
         </script>
     </head>
