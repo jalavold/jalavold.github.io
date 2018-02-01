@@ -17,8 +17,8 @@
                         htmltable = "<table>";
                         for (movie in jsonDataObj.movie){
                             htmltable += "<tr><td>" + jsonDataObj.movie[movie].id + "</td><td>" + jsonDataObj.movie[movie].title + "</td><td>" + jsonDataObj.movie[movie].year + "</td><td>";
-                            for (genre in jsonDataObj.movie[movie].genre) {
-                                htmltable += genre + ",";
+                            for (genretype in jsonDataObj.movie[movie].genre) {
+                                htmltable += jsonDataObj.movie[movie].genre[genretype] + ",";
                             };
                             htmltable += "</td></tr>";
                         };
