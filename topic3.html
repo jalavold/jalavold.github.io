@@ -16,8 +16,8 @@
                     function writetable (jsonDataObj, htmltable){
                         htmltable = "<table>";
                         for (movie in jsonDataObj.movie){
-                            htmltable += "<tr><td>" + movie.id + "</td><td>" + movie.title + "</td><td>" + movie.year + "</td><td>";
-                            for (genre in movie.genre) {
+                            htmltable += "<tr><td>" + jsonDataObj.movie[movie].id + "</td><td>" + jsonDataObj.movie[movie].title + "</td><td>" + jsonDataObj.movie[movie].year + "</td><td>";
+                            for (genre in jsonDataObj.movie[movie].genre) {
                                 htmltable += genre + ",";
                             };
                             htmltable += "</td></tr>";
