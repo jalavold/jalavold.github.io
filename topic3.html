@@ -20,9 +20,11 @@
                             for (genretype in jsonDataObj.movie[movie].genre) {
                                 htmltable += jsonDataObj.movie[movie].genre[genretype] + ",";
                             };
+                            htmltable = htmltable.slice(0, -1);
                             htmltable += "</td></tr>";
                         };
                         htmltable += "</table>";
+
                         document.getElementById("test").innerHTML = htmltable;
                     }
 
