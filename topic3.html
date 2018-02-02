@@ -61,7 +61,8 @@
             htmltable = "<table>";
             htmltable += "<tr><th>ID</th><th>Movie Title</th><th>Release Year</th><th>Genre Type(s)</th></tr>";
             for (movie in jsonDataObj.movie){
-                htmltable += "<tr><td>" + jsonDataObj.movie[movie].id + "</td><td>" + jsonDataObj.movie[movie].title + "</td><td>" + jsonDataObj.movie[movie].year + "</td><td>";
+                htmltable += "<tr><td>" + jsonDataObj.movie[movie].id + "</td><td>" + jsonDataObj.movie[movie].title;
+                htmltable += "</td><td>" + jsonDataObj.movie[movie].year + "</td><td>";
                 for (genretype in jsonDataObj.movie[movie].genre) {
                     htmltable += jsonDataObj.movie[movie].genre[genretype] + ", ";
                 };
