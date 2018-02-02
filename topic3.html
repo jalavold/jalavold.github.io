@@ -2,42 +2,42 @@
 <html>
     <head>
             <script>
-                    var jsonDataObj, htmltable="";
-                    var xmlhttp = new XMLHttpRequest();
-                    xmlhttp.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            jsonDataObj = JSON.parse(this.responseText);
-                            writetable(jsonDataObj,htmltable);
-                            }
+                var jsonDataObj, htmltable="";
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        jsonDataObj = JSON.parse(this.responseText);
+                        writetable(jsonDataObj,htmltable);
+                        }
+                    };
+                xmlhttp.open("GET", "movies.json");
+                xmlhttp.send();
+                
+                function writetable (){
+                    htmltable = "<table>";
+                    htmltable += "<tr><th>ID</th><th>Movie Title</th><th>Release Year</th><th>Genre Type(s)</th></tr>";
+                    for (movie in jsonDataObj.movie){
+                        htmltable += "<tr><td>" + jsonDataObj.movie[movie].id + "</td><td>" + jsonDataObj.movie[movie].title + "</td><td>" + jsonDataObj.movie[movie].year + "</td><td>";
+                        for (genretype in jsonDataObj.movie[movie].genre) {
+                            htmltable += jsonDataObj.movie[movie].genre[genretype] + ", ";
                         };
-                    xmlhttp.open("GET", "movies.json");
-                    xmlhttp.send();
-                    
-                    function writetable (jsonDataObj, htmltable){
-                        htmltable = "<table>";
-                        htmltable += "<tr><th>ID</th><th>Movie Title</th><th>Release Year</th><th>Genre Type(s)</th></tr>";
-                        for (movie in jsonDataObj.movie){
-                            htmltable += "<tr><td>" + jsonDataObj.movie[movie].id + "</td><td>" + jsonDataObj.movie[movie].title + "</td><td>" + jsonDataObj.movie[movie].year + "</td><td>";
-                            for (genretype in jsonDataObj.movie[movie].genre) {
-                                htmltable += jsonDataObj.movie[movie].genre[genretype] + ", ";
-                            };
-                            htmltable = htmltable.slice(0, -2);
-                            htmltable += "</td></tr>";
-                        };
-                        htmltable += "</table>";
-                        document.getElementById("jsonstringify").innerHTML = JSON.stringify(jsonDataObj);
-                        document.getElementById("test").innerHTML = htmltable;
-                    }
-                </script>
-                <style>
-                    table {
-                        border-collapse: collapse;
-                    }
-                    td, th {
-                        border: 1px solid black;
-                        padding: 8px;
-                    }
-                </style>
+                        htmltable = htmltable.slice(0, -2);
+                        htmltable += "</td></tr>";
+                    };
+                    htmltable += "</table>";
+                }
+                document.getElementById("jsonstringify").innerHTML = JSON.stringify(jsonDataObj);
+                document.getElementById("test").innerHTML = htmltable;
+            </script>
+            <style>
+                table {
+                    border-collapse: collapse;
+                }
+                td, th {
+                    border: 1px solid black;
+                    padding: 8px;
+                }
+            </style>
     </head>
 <body>
 
