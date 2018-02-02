@@ -71,15 +71,17 @@
                 };
                 htmltable += "</table>";
                 document.getElementById("jsonstringify").innerHTML = JSON.stringify(jsonDataObj);
-                document.getElementById("test").innerHTML = htmltable;
+                document.getElementById("movieTable").innerHTML = htmltable;
             }
 
         </script>
 </xmp></pre>
 <h3>Here is a link to the json file.  <a href="movies.json">movies.json</a></h3>
-<h3>Below is the output of the json file after if has been parsed into a JavaScript object using JSON.parse and then converted into a JSON sting using JSON.stringify.</h3>
+<h3>Below is the output of the json file after if has been parsed into a JavaScript object using JSON.parse and then converted into a JSON
+     sting using JSON.stringify.</h3>
 <p id="jsonstringify"></p>
-
-<p id="test"></p>
+<h3>This table of movies was created by downloading a json file via XMLHttpRequest() and parsing it into a JavaScript object using the JSON.parse() 
+    JavaScript Function. Then iterating through the items in the JavaScript object and generating the necessary HTML output.</h3>
+<p id="movieTable"></p>
 </body>
 </html>
