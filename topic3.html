@@ -2,19 +2,19 @@
 <html>
     <head>
             <script>
-                var jsonDataObj, htmltable="";
+                
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
-                        jsonDataObj = JSON.parse(this.responseText);
-                        writehtml();
+                        var jsonDataObj = JSON.parse(this.responseText);
+                        writehtml(jsonDataObj);
                         }
                     };
                 xmlhttp.open("GET", "movies.json");
                 xmlhttp.send();
                 
-                function writehtml (){
-                    htmltable = "<table>";
+                function writehtml (jsonDataObj){
+                    var htmltable = "<table>";
                     htmltable += "<tr><th>ID</th><th>Movie Title</th><th>Release Year</th><th>Genre Type(s)</th></tr>";
                     for (movie in jsonDataObj.movie){
                         htmltable += "<tr><td>" + jsonDataObj.movie[movie].id + "</td><td>" + jsonDataObj.movie[movie].title + "</td><td>" + jsonDataObj.movie[movie].year + "</td><td>";
@@ -28,6 +28,7 @@
                     document.getElementById("jsonstringify").innerHTML = JSON.stringify(jsonDataObj);
                     document.getElementById("test").innerHTML = htmltable;
                 }
+
             </script>
             <style>
                 table {
