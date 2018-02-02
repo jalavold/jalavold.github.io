@@ -2,7 +2,10 @@
 <html>
     <head>
             <script>
-                
+                // Using XMLHttpRequest() to get the movies.json file from the server. 
+                // Once the readyState is 4 (finished and response ready) and the status is 200 (OK).
+                // Next the responseText is parsed using JSON.parse into a JavaScript object.  
+                // Finally the object is passed by value as a parameter to the writehtml function.
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
@@ -13,6 +16,8 @@
                 xmlhttp.open("GET", "movies.json");
                 xmlhttp.send();
                 
+                // This functions takes the ojbects value passed to it and generates the pages additional HTML.
+                // Nested for in loops are used to access the values of each key/value pair and generates the table HTML.
                 function writehtml (jsonDataObj){
                     var htmltable = "<table>";
                     htmltable += "<tr><th>ID</th><th>Movie Title</th><th>Release Year</th><th>Genre Type(s)</th></tr>";
