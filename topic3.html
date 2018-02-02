@@ -57,7 +57,7 @@
         xmlhttp.open("GET", "movies.json");
         xmlhttp.send();
         
-        function writetable (jsonDataObj, htmltable){
+        function writetable (){
             htmltable = "<table>";
             htmltable += "<tr><th>ID</th><th>Movie Title</th><th>Release Year</th><th>Genre Type(s)</th></tr>";
             for (movie in jsonDataObj.movie){
