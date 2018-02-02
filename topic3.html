@@ -69,10 +69,14 @@
                 htmltable += "</td></tr>";
             };
             htmltable += "</table>";
-
+            document.getElementById("jsonstringify").innerText = JSON.stringify(jsonDataObj);
             document.getElementById("test").innerHTML = htmltable;
         }
     </script></xmp></pre>
+<p>Here is a link to the json file.  <a href="movies.json">movies.json</a></p>
+<p>Below is the output of the json file after if has been parsed into a JavaScript object using JSON.parse and then converted into a JSON sting using JSON.stringify functionality.</br>
+<pre id="jsonstringify"></pre>
+</p>
 <p id="test"></p>
 </body>
 </html>
