@@ -3,11 +3,15 @@
 <head>
 	<script>
 		function countToTen(){
+			// exampleText and iterator are scoped local to this function
 			var exampleText="Example 1 Ouput: ";
 			var iterator = 1;
 			var x = document.getElementById("ex1Output")
+			// loops until the iterator value is 11
 			while (iterator <= 10) {
 				exampleText+= iterator;
+				// The if below allows ", " to be added the end of the exampleText variable until 
+				// the iterator variable is 10 this makes sure there is not a trailing ", " in the final output
 				if (iterator != 10) {
 					exampleText+= ", ";
 				}
@@ -26,21 +30,29 @@
 <br>The example also uses a conditional "if" statement to decide when to use the comma delimiter.
 
 </p>
-<p>Code Snippit<br><pre>
-	function countToTen(){
-		var exampleText="Example 1 Ouput: ";
-		var iterator = 1;
-		var x = document.getElementById("ex1Output")
-		while (iterator <= 10) {
-			exampleText+= iterator;
-			if (iterator != 10) {
-				exampleText+= ", ";
+<p>Code Snippit<br>
+<pre><xmp>
+	<script>
+		function countToTen(){
+			// exampleText and iterator are scoped local to this function
+			var exampleText="Example 1 Ouput: ";
+			var iterator = 1;
+			var x = document.getElementById("ex1Output")
+			// loops until the iterator value is 11
+			while (iterator <= 10) {
+				exampleText+= iterator;
+				// The if below allows ", " to be added the end of the exampleText variable until 
+				// the iterator variable is 10 this makes sure there is not a trailing ", " in the final output
+				if (iterator != 10) {
+					exampleText+= ", ";
+				}
+				iterator++;
 			}
-			iterator++;
+			x.innerHTML = exampleText;
 		}
-		x.innerHTML = exampleText;
-	}
-</pre></p>
+	</script>
+</xmp></pre>
+</p>
 <p><button type="button" onclick="countToTen()"> Run Example</button></p>
 <p id="ex1Output"></p>
 </body>
