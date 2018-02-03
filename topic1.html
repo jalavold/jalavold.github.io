@@ -46,6 +46,41 @@
 			return ex2OutputHtml;
 		}
 
+		function favFoods(){
+			var foods = [];
+			var favFoods = {};
+			var htmlOutput = "Lavold Family Favorite Foods List";
+			foods.push("Spaghetti");
+			foods.push("Blue Bell Icecream");
+			foods.push("Pizza");
+			foods.push("Diet Coke");
+			foods.push("Thai Curry");
+
+			for (i=0 ; i < foods.length ; i++ ){
+				switch (0){
+					case 0:
+						favFoods.Aaron = foods[i];
+						break;
+					case 1:
+						favFoods.Liz = foods[i];
+						break;
+					case 2:
+						favFoods.Megan = foods[i];
+						break;
+					case 3:
+						favFoods.Jake = foods[i];
+						break;
+					case 4:
+						favFoods.Kaelen = foods[i];
+						break;
+				}
+			}
+			for (person in favFoods){
+				htmlOutput += "<br>" + person + ": " + favFoods[person] + ".";
+			}
+			document.getElementById("ex3Output").innerHTML = htmlOutput;
+		}
+
 	</script>
 </head>
 <body>
@@ -81,6 +116,7 @@
 </p>
 <p><button type="button" onclick="countToTen()"> Run Example</button></p>
 <p id="ex1Output"></p>
+
 <h4>Example 2: Topics - functions, parameters, for loop, if/else</h4> 
 <p>This example counts from 1 to 30 and outputs all even numbers on one line and odds on another. 
 	A for loop is used to do the counting and an if/else statment is used to decide if a number is even or odd
@@ -119,5 +155,19 @@
 </p>
 <p><button type="button" onclick="countToThirty()"> Run Example</button></p>
 <p id="ex2Output"></p>
+
+<h4>Example 3: Topics - functions, parameters, for loop, if/else</h4> 
+<p>This example counts from 1 to 30 and outputs all even numbers on one line and odds on another. 
+	A for loop is used to do the counting and an if/else statment is used to decide if a number is even or odd
+	and then writes the number to the correct variable.
+</p>
+<p>Code Snippit<br>
+<pre><xmp>
+	<script>
+	</script>
+</xmp></pre>
+</p>
+<p><button type="button" onclick="countToThirty()"> Run Example</button></p>
+<p id="ex3Output"></p>
 </body>
 </html>
