@@ -52,7 +52,7 @@
 <h2>Topic 1 - JavaScript - Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</h2>
 <h3>Listed below are examples of code showing various ways to implement the above topics </h3>
 <br>
-<h4>Example 1: Topics - user function, while, if, local scope variables</h4> 
+<h4>Example 1: Topics - functions, while loop, if, local scope variables</h4> 
 <p>This example counts from 1 to 10 and appends the number to a variable that is comma delimited. 
 	The example also uses a conditional "if" statement to decide when to use the comma delimiter.
 </p>
@@ -81,14 +81,39 @@
 </p>
 <p><button type="button" onclick="countToTen()"> Run Example</button></p>
 <p id="ex1Output"></p>
-<h4>Example 2: Topics - user function, while, if, local scope variables</h4> 
-<p>This example counts from 1 to 10 and appends the number to a variable that is comma delimited. 
-	The example also uses a conditional "if" statement to decide when to use the comma delimiter.
+<h4>Example 2: Topics - functions, parameters, for loop, if/else</h4> 
+<p>This example counts from 1 to 30 and outputs all even numbers on one line and odds on another. 
+	A for loop is used to do the counting and an if/else statment is used to decide if a number is even or odd
+	and then writes the number to the correct variable.
 </p>
 <p>Code Snippit<br>
 <pre><xmp>
 	<script>
+		function countToThirty(){
+			var evenNumbers = "";
+			var oddNumbers = "";
+			// for loop will loop 30 times and add the iterators string value to the correct variable
+			for(i=1; i < 31; i++){
+				if( i % 2 == 0) {
+					evenNumbers += i + ", ";
+				} else {
+					oddNumbers += i + ", ";
+				}
+			}
+			// Demonstrates passing arguments to a function and getting a return value. 
+			var ex2OutputHtml = writeEvenOddValues(evenNumbers,oddNumbers)
+			document.getElementById("ex2Output").innerHTML = ex2OutputHtml;
+		}
 
+		// this demonstrates a functions with parameters
+		// the functions takes the passed values and constructs html to be assigned to the innerHTML of a element
+		function writeEvenOddValues(evenNumbers, oddNumbers){
+			evenNumbers = evenNumbers.slice(0,-2);
+			oddNumbers = oddNumbers.slice(0,-2);
+			var ex2OutputHtml = "Even Numbers 1 to 30: " + evenNumbers + "<br>";
+			ex2OutputHtml += "Odd Numbers 1 to 30: " + oddNumbers;
+			return ex2OutputHtml;
+		}
 	</script>
 </xmp></pre>
 </p>
