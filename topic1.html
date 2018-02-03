@@ -46,16 +46,21 @@
 			return ex2OutputHtml;
 		}
 
+		
 		function favFoods(){
+			// declare empty foods array and empty favFoods object
 			var foods = [];
 			var favFoods = {};
 			var htmlOutput = "Lavold Family Favorite Foods List";
+
+			// push/add 5 food items to the end of the array
 			foods.push("Spaghetti");
 			foods.push("Blue Bell Icecream");
 			foods.push("Pizza");
 			foods.push("Diet Coke");
 			foods.push("Thai Curry");
 
+			// for iterates through array elements and the switch adds key/value pairs to the favFoods object
 			for (i=0 ; i < foods.length ; i++ ){
 				switch (i){
 					case 0:
@@ -75,6 +80,8 @@
 						break;
 				}
 			}
+
+			// for/in statement iterates through the favFoods object and outputs html of favorite foods
 			for (person in favFoods){
 				htmlOutput += "<br>" + person + ": " + favFoods[person] + ".";
 			}
@@ -164,6 +171,46 @@
 <p>Code Snippit<br>
 <pre><xmp>
 	<script>
+		function favFoods(){
+			// declare empty foods array and empty favFoods object
+			var foods = [];
+			var favFoods = {};
+			var htmlOutput = "Lavold Family Favorite Foods List";
+
+			// push/add 5 food items to the end of the array
+			foods.push("Spaghetti");
+			foods.push("Blue Bell Icecream");
+			foods.push("Pizza");
+			foods.push("Diet Coke");
+			foods.push("Thai Curry");
+
+			// for iterates through array elements and the switch adds key/value pairs to the favFoods object
+			for (i=0 ; i < foods.length ; i++ ){
+				switch (i){
+					case 0:
+						favFoods.Aaron = foods[i];
+						break;
+					case 1:
+						favFoods.Liz = foods[i];
+						break;
+					case 2:
+						favFoods.Megan = foods[i];
+						break;
+					case 3:
+						favFoods.Jake = foods[i];
+						break;
+					case 4:
+						favFoods.Kaelen = foods[i];
+						break;
+				}
+			}
+
+			// for/in statement iterates through the favFoods object and outputs html of favorite foods
+			for (person in favFoods){
+				htmlOutput += "<br>" + person + ": " + favFoods[person] + ".";
+			}
+			document.getElementById("ex3Output").innerHTML = htmlOutput;
+		}
 	</script>
 </xmp></pre>
 </p>
