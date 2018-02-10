@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script>
+        // empty object Instantiated and the properties key/value pairs added
+        var car1 = {};
+        car1.owner = "Lizzy";
+        car1.make = "Chevrolet";
+        car1.model = "Trailblazer EXT";
+        car1.year = "2005";
+
+        // car2 oject instantiated and object key/value pairs added
+        var car2 = {owner:"Lavold Family", make:"Honda", model:"Civic", year:"2013"};
+
+        //  Object constructor prototype for Car object
+        function Car(owner, make, model, year){
+            this.carOwner = owner;
+            this.carMake = make;
+            this.carModel = model;
+            this.carYear = year;
+        }
+        
+        // adding a method to the Car prototype could also all property like this if desired
+        Car.prototype.fullDescription = function() {
+            return this.carYear + " " + this.carMake + " " + this.carModel;
+        }
+
+    </script>
 </head>
 <body>
 <h2>Topic 2 - JavaScript - Object Creation Functions, Inheritance, Properties, Methods, Instantiation</h2>
 <h3>Listed below is an example of implementing the above topics.</h3>
 <br>
-<p></p>
+<p id="example"></p>
 </body>
 </html>
