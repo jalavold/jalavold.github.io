@@ -16,7 +16,12 @@
             mydiv.style.right = '200px';
             mydiv.style.bottom = '200px';
         };
-
+        function modFontStyle(){
+            document.getElementById("exampleP").style.fontFamily = "Brush Script MT";
+        };
+        function modFontSize(){
+            document.getElementById("exampleP").style.fontSize = "24pt";
+        };
     </script>
 </head>
 <body>
@@ -29,5 +34,7 @@
 <button onclick="modDiv()" type="button">Change Div color to pink</button>
 <button onclick="modP()" type="button">Change P font color to green</button>
 <button onclick="modDivLoc()" type="button">Move Div</button>
+<button onclick="modFontStyle()" type="button">Change Font Family</button>
+<button onclick="modFontSize()" type="button">Change Font Size</button>
 </body>
 </html>
