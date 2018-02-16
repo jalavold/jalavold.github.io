@@ -8,6 +8,9 @@
         function modP(){
             document.getElementById("exampleP").style.color="green";
         };
+        function modDivLoc(){
+            document.getElementById("exampleDiv").style.position(500,300);
+        }
 
     </script>
 </head>
@@ -18,7 +21,8 @@
 <div id="exampleDiv">
     <p id="exampleP">This text is inside a div</p>
 </div>
-<button onclick="modDiv()" type="button">Change Div color to pink.</button>
-<button onclick="modP()" type="button">Change P font color to green.</button>
+<button onclick="modDiv()" type="button">Change Div color to pink</button>
+<button onclick="modP()" type="button">Change P font color to green</button>
+<button onclick="modDivLoc()" type="button">Move Div</button>
 </body>
 </html>
