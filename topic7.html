@@ -19,7 +19,7 @@
             mydiv.style.width = "";;
         };
         function modFontStyle(){
-            document.getElementById("exampleP").style.fontFamily = "Brush Script MT";
+            document.getElementById("exampleP").style.fontFamily = "Lucida Console";
         };
         function modFontSize(){
             document.getElementById("exampleP").style.fontSize = "24pt";
@@ -40,7 +40,7 @@
         function chgAllP(){
             var element = document.getElementsByTagName('p');
             for (var inc = 0 ; inc < element.length ; inc++){
-                element[inc].style.fontFamily = "Brush Script MT";
+                element[inc].style.fontFamily = "Comic Sans MS";
                 element[inc].style.color = "purple";
             }
         };
@@ -70,8 +70,9 @@
 <button onclick="chgClass()" type="button">Change all class "myp" to red font color</button>
 <hr>
 <div class="myp" id="exampleDiv">
-    <p id="exampleP">This text is inside a div</p>
+    <p id="exampleP">This text is inside a paragraph element nested inside a div.  Class of this element is "myp"</p>
 </div>
-
+<p>This is another paragraph element outside the div. No Class for this element.</p>
+<p>Yet another paragraph element. Class if this element is "myp"</p>
 </body>
 </html>
