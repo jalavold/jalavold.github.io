@@ -37,6 +37,10 @@
         function divVis(){
             document.getElementById("exampleDiv").style.visibility = "visible";
         }
+        function chgAllP(){
+            document.getElementsByTagName("p").style.fontFamily = "Brush Script MT";
+            document.getElementsByTagName("p").style.color = "purple";
+        }
     </script>
 </head>
 <body>
@@ -52,6 +56,7 @@
 <button onclick="modHWColor()" type="button">Change Div Color and Size</button>
 <button onclick="divInvis()" type="button">Div Invisible</button>
 <button onclick="divVis()" type="button">Div Visible</button>
+<button onclick="chgAllP()" type="button">Chand all paragraph tags</button>
 <hr>
 <div id="exampleDiv">
     <p id="exampleP">This text is inside a div</p>
