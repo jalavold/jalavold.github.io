@@ -38,12 +38,19 @@
             document.getElementById("exampleDiv").style.visibility = "visible";
         }
         function chgAllP(){
-            document.getElementsByTagName("p").style.fontFamily = "Brush Script MT";
-            document.getElementsByTagName("p").style.color = "purple";
+            var element = document.getElementsByTagName("p");
+            for (var inc = 0 ; i < element.length ; inc++){
+                element[inc].style.fontFamily = "Brush Script MT";
+                element[inc].style.color = "purple";
+            }
+            
+           
         }
         function chgClass(){
             var element = document.getElementsByClassName("myp");
-            element.style.color = "red";
+            for (var inc = 0 ; i < element.length ; inc++){
+                element[inc].style.color = "red";
+            }
         }
     </script>
 </head>
