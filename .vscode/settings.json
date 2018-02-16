@@ -1,2 +1,5 @@
 {
+    "http.proxy": "http://one.proxy.att.com:8080",
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true
 }
