@@ -31,6 +31,12 @@
             mydiv.style.width = "400px";
             mydiv.style.backgroundColor = "yellow";
         };
+        function divInvis(){
+            document.getElementById("exampleDiv").style.visibility = "hidden";
+        };
+        function divVis(){
+            document.getElementById("exampleDiv").style.visibility = "visible";
+        }
     </script>
 </head>
 <body>
@@ -44,6 +50,8 @@
 <button onclick="modFontStyle()" type="button">Change Font Family</button>
 <button onclick="modFontSize()" type="button">Change Font Size</button>
 <button onclick="modHWColor()" type="button">Change Div Height, Width, and Color</button>
+<button onclick="divInvis()" type="button">Div Invisible</button>
+<button onclick="divVis()" type="button">Div Visible</button>
 <hr>
 <div id="exampleDiv">
     <p id="exampleP">This text is inside a div</p>
