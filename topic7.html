@@ -48,6 +48,7 @@
             var element = document.getElementsByClassName("myp");
             for (var inc = 0 ; inc < element.length ; inc++){
                 element[inc].style.color = "red";
+                event.stopPropagation();
             }
         };
 
