@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <script>
+                // Using XMLHttpRequest() to get the movies.json file from the server. 
+                // Once the readyState is 4 (finished and response ready) and the status is 200 (OK).
+                // Next the responseText is parsed using JSON.parse into a JavaScript object.  
+                // Finally the object is passed by value as a parameter to the writehtml function.
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var jsonDataObj = JSON.parse(this.responseText);
+                        writehtml(jsonDataObj);
+                        }
+                    };
+                xmlhttp.open("GET", "http://www.geoplugin.net/json.gp?base_currency=EUR");
+                xmlhttp.send();
+                 
+                // This functions takes the ojbects value passed to it and generates the pages additional HTML.
+                // Nested for in loops are used to access the values of each key/value pair and generates the table HTML.
+                function writehtml (jsonDataObj){
+                    var htmltable = "<table>";
+                    htmltable += "<tr><th>ID</th><th>Movie Title</th><th>Release Year</th><th>Genre Type(s)</th></tr>";
+                    for (name in jsonDataObj){
+                        htmltable += "<tr><td>" + name + "</td><td>" + jsonDataObj[name] + "</td><td>" + "empty space" + "</td><td>";
+                        htmltable += "</td></tr>";
+                    };
+                    htmltable += "</table>";
+                    document.getElementById("jsonstringify").innerHTML = JSON.stringify(jsonDataObj);
+                    document.getElementById("movieTable").innerHTML = htmltable;
+                }
+            </script>
+            <style>
+                table {
+                    border-collapse: collapse;
+                }
+                td, th {
+                    border: 1px solid black;
+                    padding: 8px;
+                }
+            </style>
+    </head>
+<body>
+
+<h1 style="text-align: center">Topic 4 - Using XMLHTTPRequest to Consume a JSON Web Service</h1>
+<br>
+<h3>This table of movies was created by downloading a json file via XMLHttpRequest() and parsing it into a JavaScript object using the JSON.parse() 
+    JavaScript Function. Then iterating through the items in the JavaScript object and generating the necessary HTML output.</h3>
+<p id="movieTable"></p>
+<h3>Sample JavaScript Code that implements JSON.parse() and JSON.stringify()</h3>
+<pre><xmp>
+        <script>
+            // Using XMLHttpRequest() to get the movies.json file from the server. 
+            // Once the readyState is 4 (finished and response ready) and the status is 200 (OK).
+            // Next the responseText is parsed using JSON.parse into a JavaScript object.  
+            // Finally the object is passed by value as a parameter to the writehtml function.
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var jsonDataObj = JSON.parse(this.responseText);
+                    writehtml(jsonDataObj);
+                    }
+                };
+            xmlhttp.open("GET", "movies.json");
+            xmlhttp.send();
+            
+            // This functions takes the ojbects value passed to it and generates the pages additional HTML.
+            // Nested for in loops are used to access the values of each key/value pair and generates the table HTML.
+            function writehtml (jsonDataObj){
+                var htmltable = "<table>";
+                htmltable += "<tr><th>ID</th><th>Movie Title</th><th>Release Year</th><th>Genre Type(s)</th></tr>";
+                for (movie in jsonDataObj.movie){
+                    htmltable += "<tr><td>" + jsonDataObj.movie[movie].id + "</td><td>" + jsonDataObj.movie[movie].title + "</td><td>" + jsonDataObj.movie[movie].year + "</td><td>";
+                    for (genretype in jsonDataObj.movie[movie].genre) {
+                        htmltable += jsonDataObj.movie[movie].genre[genretype] + ", ";
+                    };
+                    htmltable = htmltable.slice(0, -2);
+                    htmltable += "</td></tr>";
+                };
+                htmltable += "</table>";
+                document.getElementById("jsonstringify").innerHTML = JSON.stringify(jsonDataObj);
+                document.getElementById("movieTable").innerHTML = htmltable;
+            }
+        </script>
+</xmp></pre>
+<h3>Here is a link to the json webservice at geoPlugin.com.  <a href="http://www.geoplugin.net/json.gp?base_currency=EUR">http://www.geoplugin.net/json.gp?base_currency=EUR</a></h3>
+<h3>Below is the output of the json file after if has been parsed into a JavaScript object using JSON.parse and then converted into a JSON
+     sting using JSON.stringify.</h3>
+<p id="jsonstringify"></p>
+</body>
+</html>
