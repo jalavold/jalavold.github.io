@@ -35,6 +35,7 @@
             return this.carYear + " " + this.carMake + " " + this.carModel;
         }
 
+        // using the Car contructor and the method added using the prototype property
         function objByPrototype(){
             var car3 = new Car("Jake","Chevorlet","Corvette","2018");
             document.getElementById("example").innerHTML = car3.carOwner + " loves his " + car3.fullDescription() + "!";
@@ -51,19 +52,54 @@
 <p>Example Output: <span id="example"></span></p>
 <h3>There a several ways you create an object.</h3>
 <p>   
-    <ol type="1">
+    <ol type="A">
         <li>Create an empty object "var myobj = {};" and then add the key/value pairs using one of the methods below.</li>
             <ol type="a">
                 <li>Dot notation. Specifiy object variable then a dot "." and the key/property name.  Then make that equal to a value.  i.e. myobj.key1 = "Booya";</li>
                 <li>Bracket notation. Specify oject variable appending ["property"] and then make that equal to a value. i.e. myobj["key1"] = "Booya";</li>
             </ol>
         <li>Create an objest using Object literal method. Object is created and defined in a single statment.  It consists of list of name:value pairs.  i.e. "var car2 = {owner:"Lavold Family", make:"Honda", model:"Civic", year:"2013"};"</li>
-        <li>Create an object using a user defined constructor. One thing to keep in mind is that unlike with standard JavaScript objects, you should use the "new" keyword when creating and object from a user defined constructor.</li>
+        <li>Create an object using a user defined constructor. One thing to keep in mind is that unlike with standard JavaScript objects, you should use the "new" keyword when creating and object from a user defined constructor. Unless you want to make a boolean, Number, or String an object.</li>
             <ol type="a">
-                <li>Example:  var aaronsCar = new Car("Aaron","Jeep","Rubicon","2018");</li>
+                <li><pre><xmp>Example:  var aaronsCar = new Car("Aaron","Jeep","Rubicon","2018");</xmp></pre></li>
             </ol>
     </ol>
 </p>
+<h3>You can create your own object type.  To do this you define an ojects constructor. Below are some best practices, an example constuctor, and an example of adding a method to an existing constructor. </h3>
+<p>
+    <ol type="A">
+        <li>Best practice is to use an upper-case letter for the first letter in the function name.</li>
+        <li>This is an example of definine a object constructor </li>
+            <ul  style="list-style-type:none">
+                <li>
+                    <pre>
+                        <xmp>
+                            //  Object constructor prototype for Car object
+                            function Car(owner, make, model, year){
+                                this.carOwner = owner;
+                                this.carMake = make;
+                                this.carModel = model;
+                                this.carYear = year;
+                            }                 
+                        </xmp>
+                    </pre>
+                </li>
+            </ul>
+        <li>You can add to an existing contructor by using the prototype property. The example below adds a method to the existing Car object constructor.</li>
+            <ul style="list-style-type:none">
+                <li>
+                    <pre>
+                        <xmp>
+                            // adding a method to the Car prototype could also add a property like this if desired
+                            Car.prototype.fullDescription = function() {
+                                return this.carYear + " " + this.carMake + " " + this.carModel;
+                            }            
+                        </xmp>
+                    </pre>
+                </li>
+            </ul>
+    </ol>
 
+</p>
 </body>
 </html>
