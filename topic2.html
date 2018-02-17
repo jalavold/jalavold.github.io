@@ -30,13 +30,13 @@
             this.carYear = year;
         }
         
-        // adding a method to the Car prototype could also allow property like this if desired
+        // adding a method to the Car prototype could also add a property like this if desired
         Car.prototype.fullDescription = function() {
             return this.carYear + " " + this.carMake + " " + this.carModel;
         }
 
         function objByPrototype(){
-            var car3 = new Car("Jake","Chevorlet","Corvette","2018");
+            var car3 = Car("Jake","Chevorlet","Corvette","2018");
             document.getElementById("example").innerHTML = car3.carOwner + " loves his " + car3.fullDescription() + "!";
         }
     </script>
@@ -48,6 +48,17 @@
 <button type="button" onclick="objDotNotation()">car1 object dot notation</button><br>
 <button type="button" onclick="objLiteral()">car2 object using object literal</button><br>
 <button type="button" onclick="objByPrototype()">car3 object using object prototype</button><br>
-<p id="example"></p>
+<p>Example Output: <span id="example"></span></p>
+<p>There a several ways you call create an opject.
+    <ol type="1">
+        <li>Create an empty object "var myobj = {};" and then add the key/value pairs using one of the methods below.</li>
+            <ol type="a">
+                <li>Dot notation. Specifiy object variable then a dot "." and the key name.  Then make that equal to a value.  i.e. "myobj.key1 = 'Booya'"</li>
+                <li>Object literal. Object is created and defined in a single statment.  It consists of list of name:value pairs.  i.e. "var car2 = {owner:"Lavold Family", make:"Honda", model:"Civic", year:"2013"};"</li>
+            </ol>
+        
+    </ol>
+</p>
+
 </body>
 </html>
