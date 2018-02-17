@@ -3,14 +3,17 @@
 <head>
     <script>
         // empty object Instantiated and the properties key/value pairs added
-        var car1 = {};
-        car1.owner = "Lizzy";
-        car1.make = "Chevrolet";
-        car1.model = "Trailblazer EXT";
-        car1.year = "2005";
-        // use key/value pairs to creat a sentance an output it to a paragraph
-        //document.getElementById("example").innerHTML = "" + car1.owner + "loves her " + car1.year + " " + car1.make + " " + car1.model +".";
-        document.getElementById("example").innerHTML = "this is a test";
+        function objDotNotation(){
+            var car1 = {};
+            car1.owner = "Lizzy";
+            car1.make = "Chevrolet";
+            car1.model = "Trailblazer EXT";
+            car1.year = "2005";
+            // use key/value pairs to creat a sentance an output it to a paragraph
+            //document.getElementById("example").innerHTML = "" + car1.owner + "loves her " + car1.year + " " + car1.make + " " + car1.model +".";
+            document.getElementById("example").innerHTML = ("" + car1.owner + "loves her " + car1.year + " " + car1.make + " " + car1.model + ".");
+        }
+        
 
         // car2 oject instantiated and object key/value pairs added
         var car2 = {owner:"Lavold Family", make:"Honda", model:"Civic", year:"2013"};
@@ -34,6 +37,7 @@
 <h2>Topic 2 - JavaScript - Object Creation Functions, Inheritance, Properties, Methods, Instantiation</h2>
 <h3>Listed below is an example of implementing the above topics.</h3>
 <br>
+<button type="button" onclick="objDotNotation()">Dot Notation</button>
 <p id="example"></p>
 </body>
 </html>
