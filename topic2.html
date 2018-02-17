@@ -67,52 +67,52 @@
 </p>
 <h3>User defined objects can be created by defining an object constructor.</h3>
 <p>
-    <ol type="A">
-        <li>Best practice is to use an upper-case letter for the first letter in the function name.</li>
-        <li>This is an example of definine a object constructor </li>
-            <ul  style="list-style-type:none">
-            <li>
-            <pre>
-            <xmp>
-            //  Object constructor prototype for Car object
-            function Car(owner, make, model, year){
-                this.carOwner = owner;
-                this.carMake = make;
-                this.carModel = model;
-                this.carYear = year;
-            }                 
-            </xmp>
-            </pre>
-            </li>
-            </ul>
-        <li>You can add to an existing contructor by using the prototype property. The example below adds a method to the existing Car object constructor.</li>
-            <ul style="list-style-type:none">
-            <li>
-            <pre>
-            <xmp>
-            // adding a method to the Car prototype could also add a property like this if desired
-            Car.prototype.fullDescription = function() {
-                return this.carYear + " " + this.carMake + " " + this.carModel;
-            }            
-            </xmp>
-            </pre>
-            </li>
-            </ul>
-        <li>Here is an example of code that creates a Car object using the Car constructor and the method that was added using the prototype property.</li>
-            <ul style="list-style-type:none">
-            <li>
-            <pre>
-            <xmp>
-            // using the Car contructor and the method added using the prototype property
-            function objByPrototype(){
-                var car3 = new Car("Jake","Chevorlet","Corvette","2018");
-                document.getElementById("example").innerHTML = car3.carOwner + " loves his " + car3.fullDescription() + "!";
-            }           
-            </xmp>
-            </pre>
-            </li>
-            </ul>
-    </ol>
+<ol type="A">
+    <li>Best practice is to use an upper-case letter for the first letter in the function name.</li>
+    <li>This is an example of definine a object constructor </li>
+        <ul  style="list-style-type:none">
+        <li>
+        <pre>
+        <xmp>
+        //  Object constructor prototype for Car object
+        function Car(owner, make, model, year){
+            this.carOwner = owner;
+            this.carMake = make;
+            this.carModel = model;
+            this.carYear = year;
+        }                 
+        </xmp>
+        </pre>
+        </li>
+        </ul>
+    <li>You can add to an existing contructor by using the prototype property. The example below adds a method to the existing Car object constructor.</li>
+        <ul style="list-style-type:none">
+        <li>
+        <pre>
+        <xmp>
+        // adding a method to the Car prototype could also add a property like this if desired
+        Car.prototype.fullDescription = function() {
+            return this.carYear + " " + this.carMake + " " + this.carModel;
+        }            
+        </xmp>
+        </pre>
+        </li>
+        </ul>
+    <li>Here is an example of code that creates a Car object using the Car constructor and the method that was added using the prototype property.</li>
+        <ul style="list-style-type:none">
+        <li>
+        <pre>
+        <xmp>
+        // using the Car contructor and the method added using the prototype property
+        function objByPrototype(){
+            var car3 = new Car("Jake","Chevorlet","Corvette","2018");
+            document.getElementById("example").innerHTML = car3.carOwner + " loves his " + car3.fullDescription() + "!";
+        }           
+        </xmp>
+        </pre>
+        </li>
+        </ul>
+</ol>
 </p>
 </body>
 </html>
