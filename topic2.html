@@ -11,12 +11,16 @@
             car1.year = "2005";
             // use key/value pairs to creat a sentance an output it to a paragraph
             //document.getElementById("example").innerHTML = "" + car1.owner + "loves her " + car1.year + " " + car1.make + " " + car1.model +".";
-            document.getElementById("example").innerHTML = ("" + car1.owner + "loves her " + car1.year + " " + car1.make + " " + car1.model + ".");
+            document.getElementById("example").innerHTML = ("" + car1.owner + " loves her " + car1.year + " " + car1.make + " " + car1.model + ".");
         }
         
 
         // car2 oject instantiated and object key/value pairs added
-        var car2 = {owner:"Lavold Family", make:"Honda", model:"Civic", year:"2013"};
+        function objLiteral(){
+            var car2 = {owner:"Lavold Family", make:"Honda", model:"Civic", year:"2013"};
+            document.getElementById("example").innerHTML = ("The " + car1.owner + " loves their " + car1.year + " " + car1.make + " " + car1.model + ".");
+        }
+        
 
         //  Object constructor prototype for Car object
         function Car(owner, make, model, year){
@@ -37,7 +41,8 @@
 <h2>Topic 2 - JavaScript - Object Creation Functions, Inheritance, Properties, Methods, Instantiation</h2>
 <h3>Listed below is an example of implementing the above topics.</h3>
 <br>
-<button type="button" onclick="objDotNotation()">Dot Notation</button>
+<button type="button" onclick="objDotNotation()">car1 object dot notation</button><br>
+<button type="button" onclick="objLiteral()">car2 object using object literal</button><br>
 <p id="example"></p>
 </body>
 </html>
