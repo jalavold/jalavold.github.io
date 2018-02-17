@@ -2,12 +2,30 @@
 <html>
 <head>
     <script>
+        function chgAllP(){
+            var element = document.getElementsByTagName('p');
+            for (var inc = 0 ; inc < element.length ; inc++){
+                element[inc].style.fontFamily = "Comic Sans MS";
+                element[inc].style.color = "purple";
+            }
+        };
+
+        function chgClass(){
+            var element = document.getElementsByClassName("myp");
+            for (var inc = 0 ; inc < element.length ; inc++){
+                element[inc].style.color = "red";
+            }
+            event.stopPropagation();
+        };
+
         function modDiv(){
             document.getElementById("exampleDiv").style.backgroundColor="pink";
         };
+
         function modP(){
             document.getElementById("exampleP").style.color="green";
         };
+
         function modDivLoc(){
             var mydiv = document.getElementById("exampleDiv");
             mydiv.style.position = "absolute"; 
@@ -18,12 +36,15 @@
             mydiv.style.height = "";
             mydiv.style.width = "";;
         };
+
         function modFontStyle(){
             document.getElementById("exampleP").style.fontFamily = "Lucida Console";
         };
+
         function modFontSize(){
             document.getElementById("exampleP").style.fontSize = "24pt";
         };
+
         function modHWColor(){
             var mydiv = document.getElementById("exampleDiv");
             mydiv.style.position = "relative"; 
@@ -31,26 +52,15 @@
             mydiv.style.width = "500px";
             mydiv.style.backgroundColor = "yellow";
         };
+
         function divInvis(){
             document.getElementById("exampleDiv").style.visibility = "hidden";
         };
+        
         function divVis(){
             document.getElementById("exampleDiv").style.visibility = "visible";
         };
-        function chgAllP(){
-            var element = document.getElementsByTagName('p');
-            for (var inc = 0 ; inc < element.length ; inc++){
-                element[inc].style.fontFamily = "Comic Sans MS";
-                element[inc].style.color = "purple";
-            }
-        };
-        function chgClass(){
-            var element = document.getElementsByClassName("myp");
-            for (var inc = 0 ; inc < element.length ; inc++){
-                element[inc].style.color = "red";
-            }
-            event.stopPropagation();
-        };
+
 
     </script>
 </head>
@@ -59,6 +69,8 @@
 <h3>Listed below is an example of implementing the above topic.</h3>
 <br>
 
+<button onclick="chgClass()" type="button">Change all class "myp" to red font color</button>
+<button onclick="chgAllP()" type="button">Change all paragraph tags</button>
 <button onclick="modDiv()" type="button">Div color pink</button>
 <button onclick="modP()" type="button">Font color green</button>
 <button onclick="modDivLoc()" type="button">Move Div</button>
@@ -67,8 +79,7 @@
 <button onclick="modHWColor()" type="button">Change Div Color and Size</button>
 <button onclick="divInvis()" type="button">Div Invisible</button>
 <button onclick="divVis()" type="button">Div Visible</button>
-<button onclick="chgClass()" type="button">Change all class "myp" to red font color</button>
-<button onclick="chgAllP()" type="button">Change all paragraph tags</button>
+
 
 <hr>
 <div class="myp" id="exampleDiv">
