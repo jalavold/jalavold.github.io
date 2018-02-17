@@ -71,32 +71,32 @@
         <li>Best practice is to use an upper-case letter for the first letter in the function name.</li>
         <li>This is an example of definine a object constructor </li>
             <ul  style="list-style-type:none">
-                <li>
-                    <pre>
-                        <xmp>
-                            //  Object constructor prototype for Car object
-                            function Car(owner, make, model, year){
-                                this.carOwner = owner;
-                                this.carMake = make;
-                                this.carModel = model;
-                                this.carYear = year;
-                            }                 
-                        </xmp>
-                    </pre>
-                </li>
+            <li>
+            <pre>
+            <xmp>
+                //  Object constructor prototype for Car object
+                function Car(owner, make, model, year){
+                    this.carOwner = owner;
+                    this.carMake = make;
+                    this.carModel = model;
+                    this.carYear = year;
+                }                 
+            </xmp>
+            </pre>
+            </li>
             </ul>
         <li>You can add to an existing contructor by using the prototype property. The example below adds a method to the existing Car object constructor.</li>
             <ul style="list-style-type:none">
-                <li>
-                    <pre>
-                        <xmp>
-                            // adding a method to the Car prototype could also add a property like this if desired
-                            Car.prototype.fullDescription = function() {
-                                return this.carYear + " " + this.carMake + " " + this.carModel;
-                            }            
-                        </xmp>
-                    </pre>
-                </li>
+            <li>
+            <pre>
+            <xmp>
+                // adding a method to the Car prototype could also add a property like this if desired
+                Car.prototype.fullDescription = function() {
+                    return this.carYear + " " + this.carMake + " " + this.carModel;
+                }            
+            </xmp>
+            </pre>
+            </li>
             </ul>
     </ol>
 
