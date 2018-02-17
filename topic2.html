@@ -35,6 +35,12 @@
             return this.carYear + " " + this.carMake + " " + this.carModel;
         }
 
+        function objByPrototype(){
+            var car3 = new Car("Jake","Chevorlet","Corvette","2018");
+            document.getElementById("example").innerHTML = car3.fullDescription;
+            
+
+        }
     </script>
 </head>
 <body>
@@ -43,6 +49,7 @@
 <br>
 <button type="button" onclick="objDotNotation()">car1 object dot notation</button><br>
 <button type="button" onclick="objLiteral()">car2 object using object literal</button><br>
+<button type="button" onclick="objByPrototype()">car3 object using object prototype</button><br>
 <p id="example"></p>
 </body>
 </html>
