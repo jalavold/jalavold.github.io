@@ -74,7 +74,7 @@
         // Nested for in loops are used to access the values of each key/value pair and generates the table HTML.
         function writehtml (jsonDataObj){
             var htmltable = "<table>";
-            htmltable += "<tr><th>User Name</th><th>Email Address</th><th>Phone Number(s)</th></tr>";
+            htmltable += "<tr><th>User Name</th><th>Email Address</th><th>Phone Number</th></tr>";
             for (var inc = 0 ; inc < jsonDataObj.length ; inc++){
                 htmltable += "<tr><td>" + jsonDataObj[inc].name + "</td><td>" + jsonDataObj[inc].email + "</td><td>" + jsonDataObj[inc].phone + "</td></tr>";
             }
