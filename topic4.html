@@ -24,9 +24,12 @@
                 function writehtml (jsonDataObj){
                     var htmltable = "<table>";
                     htmltable += "<tr><th>ID</th><th>Movie Title</th><th>Release Year</th><th>Genre Type(s)</th></tr>";
-                    for (userObj in jsonDataObj){
-                        htmltable += "<tr><td>" + userObj.name + "</td><td>" + userObj.email + "</td><td>" + "empty space" + "</td><td>";
+                    for (var inc = 0 ; inc < jsonDataObj.length ; inc++){
+                        htmltable += "<tr><td>" + jsonDataObj[inc].name + "</td><td>" + jsonDataObj[inc].email + "</td><td>" + "empty space" + "</td><td>";
                         htmltable += "</td></tr>";
+                    }
+                    for (userObj in jsonDataObj){
+
                     };
                     htmltable += "</table>";
                     document.getElementById("jsonstringify").innerHTML = JSON.stringify(jsonDataObj);
