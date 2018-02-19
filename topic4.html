@@ -7,14 +7,17 @@
                 // Next the responseText is parsed using JSON.parse into a JavaScript object.  
                 // Finally the object is passed by value as a parameter to the writehtml function.
                 var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function () {
+                if ('withCredentials' in xmlhttp){
+                    xmlhttp.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
                         var jsonDataObj = JSON.parse(this.responseText);
                         writehtml(jsonDataObj);
                         }
                     };
-                xmlhttp.open("GET", "https://jsonplaceholder.typicode.com/users", true);
-                xmlhttp.send();
+                    xmlhttp.open("GET", "https://jsonplaceholder.typicode.com/users", true);
+                    xmlhttp.send();
+                }
+                
                  
                 // This functions takes the ojbects value passed to it and generates the pages additional HTML.
                 // Nested for in loops are used to access the values of each key/value pair and generates the table HTML.
