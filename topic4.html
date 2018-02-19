@@ -24,8 +24,8 @@
                 function writehtml (jsonDataObj){
                     var htmltable = "<table>";
                     htmltable += "<tr><th>ID</th><th>Movie Title</th><th>Release Year</th><th>Genre Type(s)</th></tr>";
-                    for (name in jsonDataObj){
-                        htmltable += "<tr><td>" + name[0] + "</td><td>" + jsonDataObj[name] + "</td><td>" + "empty space" + "</td><td>";
+                    for (userObj in jsonDataObj){
+                        htmltable += "<tr><td>" + userObj[0].name + "</td><td>" + userObj[0].email + "</td><td>" + "empty space" + "</td><td>";
                         htmltable += "</td></tr>";
                     };
                     htmltable += "</table>";
