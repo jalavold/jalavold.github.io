@@ -23,14 +23,10 @@
                 // Nested for in loops are used to access the values of each key/value pair and generates the table HTML.
                 function writehtml (jsonDataObj){
                     var htmltable = "<table>";
-                    htmltable += "<tr><th>ID</th><th>User Name</th><th>Email Address</th><th>Phone Number(s)</th></tr>";
+                    htmltable += "<tr><th>User Name</th><th>Email Address</th><th>Phone Number(s)</th></tr>";
                     for (var inc = 0 ; inc < jsonDataObj.length ; inc++){
-                        htmltable += "<tr><td>" + jsonDataObj[inc].name + "</td><td>" + jsonDataObj[inc].email + "</td><td>" + jsonDataObj[inc].phone + "</td><td>";
-                        htmltable += "</td></tr>";
+                        htmltable += "<tr><td>" + jsonDataObj[inc].name + "</td><td>" + jsonDataObj[inc].email + "</td><td>" + jsonDataObj[inc].phone + "</td></tr>";
                     }
-                    for (userObj in jsonDataObj){
-
-                    };
                     htmltable += "</table>";
                     document.getElementById("jsonstringify").innerHTML = JSON.stringify(jsonDataObj);
                     document.getElementById("movieTable").innerHTML = htmltable;
@@ -50,7 +46,7 @@
 
 <h1 style="text-align: center">Topic 4 - Using XMLHTTPRequest to Consume a JSON Web Service</h1>
 <br>
-<h3>This table of movies was created by querying a JSON webservice and retriving the returned data via XMLHttpRequest(). 
+<h3>This table of users was created by querying a JSON webservice and retriving the returned data via XMLHttpRequest(). 
     The JSON is then parsed into a JavaScript object using the JSON.parse() 
     JavaScript Function. Then iterating through the items in the JavaScript object and generating the necessary HTML output.</h3>
 <p id="movieTable"></p>
