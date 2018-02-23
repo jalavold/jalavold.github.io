@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Topic 8 - Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</title>
+    <style>
+        #grow{
+            width: 30px;
+            height: 30px;
+            background: limegreen;
+            /* webkit is used for Safari compatibility */
+            -webkit-transition: width 2s, height 4s;
+            transition: width 3s, 2s;
+        }
+        #grow:hover {
+            width: 500px;
+            height: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Topic 8 - Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</h2>
+    </header>
+    <div id="grow">
+
+    </div>
+
+
+</body>
+</html>
