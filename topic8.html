@@ -36,6 +36,50 @@
             -webkit-transform: rotate(360deg); 
             transform: rotate(360deg);
         }
+
+        #growtransformanimate{
+            width: 100px;
+            height: 100px;
+            background: limegreen;
+            position: relative;
+            /* webkit is used for Safari compatibility */
+            -webkit-transition: width 3s, height 2s;
+            transition: width 3s, 2s;
+        }
+
+        #growtransformanimate:hover {
+            width: 300px;
+            height: 300px;
+            border-radius: 150px;
+            /* again for Safari compatibility */
+            -webkit-transform: rotate(360deg); 
+            transform: rotate(360deg);
+            -webkit-animation-name: trippy; /* Safari 4.0 - 8.0 */
+            -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+            -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+            animation-name: trippy;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+        }
+
+            /* Safari 4.0 - 8.0 */
+        @-webkit-keyframes trippy {
+            0%   {background-color:red; left:0px; top:0px;}
+            25%  {background-color:yellow; left:200px; top:0px;}
+            50%  {background-color:blue; left:200px; top:200px;}
+            75%  {background-color:green; left:0px; top:200px;}
+            100% {background-color:red; left:0px; top:0px;}
+        }
+
+        /* Standard syntax */
+        @keyframes trippy {
+            0%   {background-color:red; left:0px; top:0px;}
+            25%  {background-color:yellow; left:200px; top:0px;}
+            50%  {background-color:blue; left:200px; top:200px;}
+            75%  {background-color:green; left:0px; top:200px;}
+            100% {background-color:red; left:0px; top:0px;}
+        }
+
     </style>
 </head>
 <body>
@@ -47,6 +91,7 @@
     <div id="grow"></div>
     <p>This transition is similar to above with a transform added so it will rotate the div by 360 degrees. As it spins it will become a circle. </p>
     <div id="growtransform"></div>
-
+    <p>This transition is similar to above with a transform added so it will rotate the div by 360 degrees. As it spins it will become a circle. </p>
+    <div id="growtransformanimate"></div>
 </body>
 </html>
