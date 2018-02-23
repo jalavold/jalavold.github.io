@@ -9,12 +9,30 @@
             height: 30px;
             background: limegreen;
             /* webkit is used for Safari compatibility */
-            -webkit-transition: width 2s, height 4s;
+            -webkit-transition: width 3s, height 2s;
             transition: width 3s, 2s;
         }
+
         #grow:hover {
             width: 800px;
-            height: 3px;
+            height: 30px;
+        }
+
+        #growtransform{
+            width: 30px;
+            height: 30px;
+            background: limegreen;
+            /* webkit is used for Safari compatibility */
+            -webkit-transition: width 3s, height 2s;
+            transition: width 3s, 2s;
+        }
+
+        #growtransform:hover {
+            width: 800px;
+            height: 30px;
+            /* again for Safari compatibility */
+            -webkit-transform: rotate(360deg); 
+            transform: rotate(360deg);
         }
     </style>
 </head>
@@ -22,10 +40,11 @@
     <header>
         <h2>Topic 8 - Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</h2>
     </header>
-    <div id="grow">
-
-    </div>
-
+    <p>This is a basic transition that increases the width of a colored div from 30px to 800px when a mouse is hovering over the div.
+        the timing is set for 3 seconds for width and 2 seconds for the height. </p>
+    <div id="grow"></div>
+    <p>This transition is similar to above with  a transform addeded to it rotating the div by 360 degrees. </p>
+    <div id="growtransform"></div>
 
 </body>
 </html>
