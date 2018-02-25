@@ -3,6 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Topic 8 - Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</title>
+    <script>
+        // Listens for all content to finish loading
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // Two functions that assign or remove an addtional css class to the "line" class.  
+            //This cause the transition to occure when the button is pressed and then stop when the button is released.
+            
+            // adds the trans class to the line class
+            document.getElementById("triggertrans").onmousedown = function() {
+                document.getElementsByClassName("line")[0].classList.add("trans");
+            }
+        
+            // removes the trans class from the line class
+            document.getElementById("triggertrans").onmouseup= function() {
+                document.getElementsByClassName("line")[0].classList.remove("trans");
+            }
+        }, false);
+
+     </script>
+
     <style>
         #grow{
             width: 30px;
@@ -71,6 +91,21 @@
             100% {background-color:lime; left:0px; top:0px;}
         }
 
+        .line{
+            width: 30px;
+            height: 3px;
+            background: limegreen;
+            /* webkit is used for Safari compatibility */
+            -webkit-transition: width 3s, height 2s;
+            transition: width 3s, 2s;
+
+        }
+
+        .line.trans{
+            width: 800px;
+            height: 3px;
+        }
+
     </style>
 </head>
 <body>
@@ -84,5 +119,22 @@
     <div id="growtransform"></div>
     <p>This transition make a div circular and the div travels in an square path while changing colors. </p>
     <div id="growtransformanimate"></div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <p>Click on the "Trigger Transitions" button with any mouse button (left, right, center/wheel) and hold to make line grow.  
+        Release mouse button and the line will shrink back to it's original size.  To create this effect two JavaScript 
+        functions were created for the button's "onmousedown" and "onmouseup" events.
+    </p>
+    <div class="line"></div>
+    <button id="triggertrans" type="button">Trigger Transitions</button>
+
 </body>
 </html>
