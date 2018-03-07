@@ -8,8 +8,14 @@
                 userinfoobj.lastname = document.getElementById("lastname").value;
                 userinfoobj.email = document.getElementById("email").value;
                 if(typeof(Storage) !== "undefined") {
-                        localStorage.setItem("jsonstring", JSON.stringify(userinfoobj));
-                        alert(localStorage.getItem("jsonstring"));
+                    if (localStorage.getItem("jsonstring") === null) {
+                        localStorage.setItem("jsonstring") = localStorage.getItem("jsonstring") + JSON.stringify(userinfoobj);
+                    } else {
+                        localStorage.setItem("jsonstring") = localStorage.getItem("jsonstring");
+                    }
+                    alert(localStorage.getItem("jsonstring").value);
+                    } else {
+                    alert("Sorry, your browser does not support web storage...");
                 }
             }
         </script>
