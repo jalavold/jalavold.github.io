@@ -5,7 +5,7 @@
              if (!(localStorage.getItem("jsonstring") === null)) {
                 localStorage.removeItem("jsonstring");
              }
-            function alert_me() {
+            function onclickFormC() {
                 var userinfoobj = {};
                 userinfoobj.firstname = document.getElementById("firstname").value;
                 userinfoobj.lastname = document.getElementById("lastname").value;
@@ -68,13 +68,13 @@
             <h3>Form A</h3>
             <p>
                 First name:<br>
-                <input type="text" name="firstname" id="firstname">
+                <input type="text" name="firstnamea" id="firstnamea">
                 <br>
                 Last name:<br>
-                <input type="text" name="lastname" id="lastname">
+                <input type="text" name="lastnamea" id="lastnamea">
                 <br>
                 E-Mail:<br>
-                <input type="text" name="email" id="email">
+                <input type="text" name="emaila" id="emaila">
                 <br><br>
                 <button onclick="alert_me();">Save</button>
             </p>
@@ -83,13 +83,13 @@
             <h3>Form B</h3>
             <p>
                 First name:<br>
-                <input type="text" name="firstname" id="firstname">
+                <input type="text" name="firstname" id="firstnameb">
                 <br>
                 Last name:<br>
-                <input type="text" name="lastname" id="lastname">
+                <input type="text" name="lastname" id="lastnameb">
                 <br>
                 E-Mail:<br>
-                <input type="text" name="email" id="email">
+                <input type="text" name="email" id="emailb">
                 <br><br>
                 <button onclick="alert_me();">Save</button>
             </p>
@@ -106,7 +106,7 @@
                 E-Mail:<br>
                 <input type="text" name="email" id="email">
                 <br><br>
-                <button onclick="alert_me();">Save</button>
+                <button onclick="onclickFormC();">Save</button>
             </p>
         </td>
     </tr>
@@ -119,20 +119,5 @@
         </td>
     </tr>
 </table>
-<h3>Form C</h3>
-<p>
-    First name:<br>
-    <input type="text" name="firstname" id="firstname">
-    <br>
-    Last name:<br>
-    <input type="text" name="lastname" id="lastname">
-    <br>
-    E-Mail:<br>
-    <input type="text" name="email" id="email">
-    <br><br>
-    <button onclick="alert_me();">Save</button>
-</p>
-<p id="userTable"></p>
-<p id="jsonstringify"></p>
 </body>
 </html>
