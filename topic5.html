@@ -5,7 +5,7 @@
              if (!(localStorage.getItem("jsonstring") === null)) {
                 localStorage.removeItem("jsonstring");
              }
-            function onclickFormC() {
+            function onclickUsers() {
                 var userinfoobj = {};
                 userinfoobj.firstname = document.getElementById("firstname").value;
                 userinfoobj.lastname = document.getElementById("lastname").value;
@@ -38,6 +38,18 @@
                 document.getElementById("jsonstringify").innerHTML = JSON.stringify(jsonDataObj);
                 document.getElementById("userTable").innerHTML = htmltable;
             }
+
+            function onclickFavMovie(){
+                if(typeof(Storage) !== "undefined") {
+                    if (localStorage.getItem("jsonstring") === null) {
+                        localStorage.fullname = document.getElementById("fullname").value;
+                        localStorage.favmovie = document.getElementById("favmovie").value;
+                    } else {
+                    alert("Sorry, your browser does not support web storage...");
+                }
+                var favmoviestring =  localStorage.favmovie + "is " + localStorage.fullname + "'s favorite movie!";
+                document.getElementById("favMovie").innerHTML = favmoviestring;
+            }
             
         </script>
 
@@ -67,16 +79,13 @@
         <td>
             <h3>Form A</h3>
             <p>
-                First name:<br>
-                <input type="text" name="firstnamea" id="firstnamea">
+                Full Name:<br>
+                <input type="text" name="fullname" id="fullname">
                 <br>
-                Last name:<br>
-                <input type="text" name="lastnamea" id="lastnamea">
-                <br>
-                E-Mail:<br>
-                <input type="text" name="emaila" id="emaila">
-                <br><br>
-                <button onclick="alert_me();">Save</button>
+                Favorite Movie:<br>
+                <input type="text" name="favmovie" id="favmovie">
+                <br>><br>
+                <button onclick="onclickFavMovie();">Save</button>
             </p>
         </td>
         <td>
@@ -106,16 +115,18 @@
                 E-Mail:<br>
                 <input type="text" name="email" id="email">
                 <br><br>
-                <button onclick="onclickFormC();">Save</button>
+                <button onclick="onclickUsers();">Save</button>
             </p>
         </td>
     </tr>
     <tr>
-        <td></td>
+        <td>
+            <p id="favMovie"></p>
+        </td>
         <td></td>
         <td>
             <p id="userTable"></p>
-            <p id="jsonstringify"></p></td>
+            <p id="jsonstringify"></p>
         </td>
     </tr>
 </table>
