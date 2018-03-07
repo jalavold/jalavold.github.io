@@ -75,8 +75,8 @@
                     htmltable += "<tr><td>" + jsonDataObj[inc].firstname + "</td><td>" + jsonDataObj[inc].lastname + "</td><td>" + jsonDataObj[inc].email + "</td></tr>";
                 }
                 htmltable += "</table>";
-                document.getElementById("jsonstringify").innerHTML = JSON.stringify(jsonDataObj);
-                document.getElementById("userTable").innerHTML = htmltable;
+                document.getElementById("carsstring").innerHTML = JSON.stringify(jsonDataObj);
+                document.getElementById("carsTable").innerHTML = htmltable;
             }
             
         </script>
@@ -151,7 +151,10 @@
         <td>
             <p id="favMovie"></p>
         </td>
-        <td></td>
+        <td>
+            <p id="carsTable"></p>
+            <p id="carsstring"></p>
+        </td>
         <td>
             <p id="userTable"></p>
             <p id="jsonstringify"></p>
