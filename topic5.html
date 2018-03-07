@@ -30,9 +30,9 @@
             // For loop isused to access the value of each key/value pair and generates the table HTML.
             function writehtml (jsonDataObj){
                 var htmltable = "<table>";
-                htmltable += "<tr><th>User Name</th><th>Email Address</th><th>Phone Number</th></tr>";
+                htmltable += "<tr><th>First Name</th><th>Last Name</th><th>E-Mail</th></tr>";
                 for (var inc = 0 ; inc < jsonDataObj.length ; inc++){
-                    htmltable += "<tr><td>" + jsonDataObj[inc].name + "</td><td>" + jsonDataObj[inc].email + "</td><td>" + jsonDataObj[inc].phone + "</td></tr>";
+                    htmltable += "<tr><td>" + jsonDataObj[inc].firstname + "</td><td>" + jsonDataObj[inc].lastname + "</td><td>" + jsonDataObj[inc].email + "</td></tr>";
                 }
                 htmltable += "</table>";
                 document.getElementById("jsonstringify").innerHTML = JSON.stringify(jsonDataObj);
