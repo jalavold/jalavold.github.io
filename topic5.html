@@ -55,9 +55,71 @@
 
 <h1 style="text-align: center">Topic 5 - Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</h1>
 <br>
-<h3>Info about web form</h3>
-
-<h3>Web Form</h3>
+<h3>The page has several demos of reading and writing to localStorage.  <br>
+    <ul>
+        <li>Form A reads and writes values to a couple of localStorage objects.  The values are then retrieved from the localStorage and displayed.</li>
+        <li>Form B writes to an array and then the array is loaded into a localStorage object as text.  The text is then retrieved from the localStorage and displayed.</li>
+        <li>Form C reads and writes a JSON string to local storage.  The JSON string is then retrieved form localStorage and displayed.</li>
+    </ul>
+</h3>
+<table>
+    <tr>
+        <td>
+            <h3>Form A</h3>
+            <p>
+                First name:<br>
+                <input type="text" name="firstname" id="firstname">
+                <br>
+                Last name:<br>
+                <input type="text" name="lastname" id="lastname">
+                <br>
+                E-Mail:<br>
+                <input type="text" name="email" id="email">
+                <br><br>
+                <button onclick="alert_me();">Save</button>
+            </p>
+        </td>
+        <td>
+            <h3>Form B</h3>
+            <p>
+                First name:<br>
+                <input type="text" name="firstname" id="firstname">
+                <br>
+                Last name:<br>
+                <input type="text" name="lastname" id="lastname">
+                <br>
+                E-Mail:<br>
+                <input type="text" name="email" id="email">
+                <br><br>
+                <button onclick="alert_me();">Save</button>
+            </p>
+        </td>
+        <td>
+            <h3>Form C</h3>
+            <p>
+                First name:<br>
+                <input type="text" name="firstname" id="firstname">
+                <br>
+                Last name:<br>
+                <input type="text" name="lastname" id="lastname">
+                <br>
+                E-Mail:<br>
+                <input type="text" name="email" id="email">
+                <br><br>
+                <button onclick="alert_me();">Save</button>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>
+            <p id="userTable"></p>
+            <p id="jsonstringify"></p></td>
+        </td>
+    </tr>
+</table>
+<h3>Form C</h3>
 <p>
     First name:<br>
     <input type="text" name="firstname" id="firstname">
