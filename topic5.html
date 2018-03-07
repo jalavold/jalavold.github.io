@@ -2,7 +2,7 @@
 <html>
     <head>
         <script>
-             if (localStorage.getItem("jsonstring") === null) {
+             if (!(localStorage.getItem("jsonstring") === null)) {
                 localStorage.removeItem("jsonstring");
              }
             function alert_me() {
