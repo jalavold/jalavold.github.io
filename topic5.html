@@ -22,9 +22,23 @@
                     alert("Sorry, your browser does not support web storage...");
                 }
 
-                var jsonObj = JSON.parse("[" + localStorage.getItem("jsonstring") + "]");
-                alert("done");
+                var jsonDataObj = JSON.parse("[" + localStorage.getItem("jsonstring") + "]");
+                writehtml(jsonDataObj);
             }
+
+            // This function takes the ojbects value passed to it and generates the page's additional HTML.
+            // For loop isused to access the value of each key/value pair and generates the table HTML.
+            function writehtml (jsonDataObj){
+                var htmltable = "<table>";
+                htmltable += "<tr><th>User Name</th><th>Email Address</th><th>Phone Number</th></tr>";
+                for (var inc = 0 ; inc < jsonDataObj.length ; inc++){
+                    htmltable += "<tr><td>" + jsonDataObj[inc].name + "</td><td>" + jsonDataObj[inc].email + "</td><td>" + jsonDataObj[inc].phone + "</td></tr>";
+                }
+                htmltable += "</table>";
+                document.getElementById("jsonstringify").innerHTML = JSON.stringify(jsonDataObj);
+                document.getElementById("movieTable").innerHTML = htmltable;
+            }
+            
         </script>
 
         <style>
@@ -42,7 +56,7 @@
 <h1 style="text-align: center">Topic 5 - Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</h1>
 <br>
 <h3>Info about web form</h3>
-<p id="movieTable"></p>
+
 <h3>Web Form</h3>
 <p>
     First name:<br>
@@ -56,6 +70,7 @@
     <br><br>
     <button onclick="alert_me();">Save</button>
 </p>
-
+<p id="userTable"></p>
+<p id="jsonstringify"></p>
 </body>
 </html>
