@@ -56,13 +56,13 @@
                 var carsArray = [document.getElementById("carmake").value, document.getElementById("carmodel").value, document.getElementById("caryear").value];
                 var arrayOfCars = [];
                 if(typeof(Storage) !== "undefined") {
-                    if (localStorage.getItem("carstring") === null) {
+                    
                         arrayOfCars[arrayOfCars.length] = carsArray;
                         localStorage.setItem("carstring", arrayOfCars);
-                    } else {
+                } else {
                     alert("Sorry, your browser does not support web storage...");
-                    }
                 }
+            }
 
                 var carsArrayLocalStorage = localStorage.carstring;
                 writecarshtml(carsArrayLocalStorage);
