@@ -9,9 +9,10 @@
                 userinfoobj.email = document.getElementById("email").value;
                 if(typeof(Storage) !== "undefined") {
                     if (localStorage.getItem("jsonstring") === null) {
-                        localStorage.setItem("jsonstring") = localStorage.getItem("jsonstring") + JSON.stringify(userinfoobj);
+
+                        localStorage.setItem("jsonstring", JSON.stringify(userinfoobj));
                     } else {
-                        localStorage.setItem("jsonstring") = localStorage.getItem("jsonstring");
+                        localStorage.setItem("jsonstring", localStorage.getItem("jsonstring") + JSON.stringify(userinfoobj));
                     }
                     alert(localStorage.getItem("jsonstring").value);
                     } else {
