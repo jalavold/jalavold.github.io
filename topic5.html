@@ -44,7 +44,7 @@
                     if (localStorage.getItem("jsonstring") === null) {
                         localStorage.fullname = document.getElementById("fullname").value;
                         localStorage.favmovie = document.getElementById("favmovie").value;
-                        var favmoviestring =  localStorage.favmovie + "is " + localStorage.fullname + "'s favorite movie!";
+                        var favmoviestring =  localStorage.favmovie + " is " + localStorage.fullname + "'s favorite movie!";
                         document.getElementById("favMovie").innerHTML = favmoviestring;
                     } else {
                     alert("Sorry, your browser does not support web storage...");
@@ -85,7 +85,7 @@
                 <br>
                 Favorite Movie:<br>
                 <input type="text" name="favmovie" id="favmovie">
-                <br>><br>
+                <br><br><br><br>
                 <button onclick="onclickFavMovie();">Save</button>
             </p>
         </td>
