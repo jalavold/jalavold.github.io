@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function alert_me() {
+                var userinfoobj = {};
+                userinfoobj.firstname = document.getElementById("firstname").value;
+                userinfoobj.lastname = document.getElementById("lastname").value;
+                userinfoobj.email = document.getElementById("email").value;
+                if(typeof(Storage) !== "undefined") {
+                        localStorage.setItem("jsonstring", JSON.stringify(userinfoobj));
+                        alert(localStorage.getItem("jsonstring"));
+                }
+            }
+        </script>
+
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+            td, th {
+                border: 1px solid black;
+                padding: 8px;
+            }
+        </style>
+    </head>
+<body>
+
+<h1 style="text-align: center">Topic 5 - Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</h1>
+<br>
+<h3>Info about web form</h3>
+<p id="movieTable"></p>
+<h3>Web Form</h3>
+<p>
+    First name:<br>
+    <input type="text" name="firstname" id="firstname">
+    <br>
+    Last name:<br>
+    <input type="text" name="lastname" id="lastname">
+    <br>
+    E-Mail:<br>
+    <input type="text" name="email" id="email">
+    <br><br>
+    <button onclick="alert_me();">Save</button>
+</p>
+
+</body>
+</html>
