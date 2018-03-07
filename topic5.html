@@ -22,7 +22,7 @@
                     alert("Sorry, your browser does not support web storage...");
                 }
 
-                var jsonObj = JSON.parse(localStorage.getItem("jsonstring"));
+                var jsonObj = JSON.parse("[" + localStorage.getItem("jsonstring") + "]");
                 alert("done");
             }
         </script>
