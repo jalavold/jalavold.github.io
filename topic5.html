@@ -41,14 +41,12 @@
 
             function onclickFavMovie(){
                 if(typeof(Storage) !== "undefined") {
-                    if (localStorage.getItem("jsonstring") === null) {
                         localStorage.fullname = document.getElementById("fullname").value;
                         localStorage.favmovie = document.getElementById("favmovie").value;
                         var favmoviestring =  localStorage.favmovie + " is " + localStorage.fullname + "'s favorite movie!";
                         document.getElementById("favMovie").innerHTML = favmoviestring;
-                    } else {
+                } else {
                     alert("Sorry, your browser does not support web storage...");
-                    }
                 }
             }
 
