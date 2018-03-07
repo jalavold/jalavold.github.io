@@ -2,7 +2,9 @@
 <html>
     <head>
         <script>
-            localStorage.setItem("jsonstring", "");
+             if (localStorage.getItem("jsonstring") === null) {
+                localStorage.removeItem("jsonstring");
+             }
             function alert_me() {
                 var userinfoobj = {};
                 userinfoobj.firstname = document.getElementById("firstname").value;
