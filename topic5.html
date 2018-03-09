@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
         <script>
              if (!(localStorage.getItem("jsonstring") === null)) {
                 localStorage.removeItem("jsonstring");
              }
+
+             function onclickFavMovie(){
+                if(typeof(Storage) !== "undefined") {
+                        localStorage.fullname = document.getElementById("fullname").value;
+                        localStorage.favmovie = document.getElementById("favmovie").value;
+                        var favmoviestring =  localStorage.favmovie + " is " + localStorage.fullname + "'s favorite movie!";
+                        document.getElementById("favMovie").innerHTML = favmoviestring;
+                        document.getElementById("fullname").value="";
+                        document.getElementById("favmovie").value="";
+                } else {
+                    alert("Sorry, your browser does not support web storage...");
+                }
+            }
+
             function onclickUsers() {
                 var userinfoobj = {};
                 userinfoobj.firstname = document.getElementById("firstname").value;
@@ -17,13 +32,15 @@
                     } else {
                         localStorage.setItem("jsonstring", localStorage.getItem("jsonstring") + "," + JSON.stringify(userinfoobj));
                     }
-                    alert(localStorage.getItem("jsonstring"));
-                    } else {
+                } else {
                     alert("Sorry, your browser does not support web storage...");
                 }
 
                 var jsonDataObj = JSON.parse("[" + localStorage.getItem("jsonstring") + "]");
                 writehtml(jsonDataObj);
+                document.getElementById("firstname").value="";
+                document.getElementById("lastname").value="";
+                document.getElementById("email").value="";
             }
 
             // This function takes the ojbects value passed to it and generates the page's additional HTML.
@@ -39,39 +56,38 @@
                 document.getElementById("userTable").innerHTML = htmltable;
             }
 
-            function onclickFavMovie(){
-                if(typeof(Storage) !== "undefined") {
-                        localStorage.fullname = document.getElementById("fullname").value;
-                        localStorage.favmovie = document.getElementById("favmovie").value;
-                        var favmoviestring =  localStorage.favmovie + " is " + localStorage.fullname + "'s favorite movie!";
-                        document.getElementById("favMovie").innerHTML = favmoviestring;
-                } else {
-                    alert("Sorry, your browser does not support web storage...");
-                }
-            }
-
             function onclickCars() {
-                var carsArray = [document.getElementById("carmake").value, document.getElementById("carmodel").value, document.getElementById("caryear").value];
-                var arrayOfCars = [];
+                var carsArray = [];
+                carsArray.push(document.getElementById("carmake").value); 
+                carsArray.push(document.getElementById("carmodel").value);
+                carsArray.push(document.getElementById("caryear").value);
+
                 if(typeof(Storage) !== "undefined") {
-                    
-                        arrayOfCars[arrayOfCars.length] = carsArray;
-                        localStorage.setItem("carstring", arrayOfCars);
+                    if (localStorage.getItem("carstring")){
+                    var arrayOfCars = JSON.parse(localStorage.getItem("carstring"));
+                    }
+                    arrayOfCars[arrayOfCars.length] = carsArray;
+                    localStorage.setItem("carstring", JSON.stringify(arrayOfCars));
                 } else {
                     alert("Sorry, your browser does not support web storage...");
                 }
-                var carsArrayLocalStorage = localStorage.carstring;
+                var carsArrayLocalStorage = JSON.parse(localStorage.getItem("carstring"));
                 writecarshtml(carsArrayLocalStorage);
+                document.getElementById("carmake").value="";
+                document.getElementById("carmodel").value="";
+                document.getElementById("caryear").value="";
             }
 
-            function writecarshtml (jsonDataObj){
+            function writecarshtml (carsArrayLocalStorage){
                 var htmltable = "<table>";
-                htmltable += "<tr><th>First Name</th><th>Last Name</th><th>E-Mail</th></tr>";
-                for (var inc = 0 ; inc < jsonDataObj.length ; inc++){
-                    htmltable += "<tr><td>" + jsonDataObj[inc].firstname + "</td><td>" + jsonDataObj[inc].lastname + "</td><td>" + jsonDataObj[inc].email + "</td></tr>";
+                
+                htmltable += "<tr><th>Make</th><th>Model</th><th>Year</th></tr>";
+                for (car in carsArrayLocalStorage) {
+                    carinfo = carsArrayLocalStorage[car];
+                    htmltable += "<tr><td>" + carinfo[0]+ "</td><td>" + carinfo[1] + "</td><td>" + carinfo[2] + "</td></tr>";
                 }
                 htmltable += "</table>";
-                document.getElementById("carsstring").innerHTML = JSON.stringify(jsonDataObj);
+                document.getElementById("carsstring").innerHTML = JSON.stringify(carsArrayLocalStorage);
                 document.getElementById("carsTable").innerHTML = htmltable;
             }
             
@@ -94,7 +110,8 @@
 <h3>The page has several demos of reading and writing to localStorage.  <br>
     <ul>
         <li>Form A reads and writes values to a couple of localStorage objects.  The values are then retrieved from the localStorage and displayed.</li>
-        <li>Form B writes to an array and then the array is loaded into a localStorage object as text.  The text is then retrieved from the localStorage and displayed.</li>
+        <li>Form B writes to an array and then the array is turned into a JSON string and is loaded into a localStorage object as text.  
+            The text is then retrieved from the localStorage and loaded back into an array using JSON.parse and then displayed.</li>
         <li>Form C reads and writes a JSON string to local storage.  The JSON string is then retrieved form localStorage and displayed.</li>
     </ul>
 </h3>
