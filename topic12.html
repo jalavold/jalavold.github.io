@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Topic 12 - Designing, Defining, and Triggering CSS3 Transforms</title>
+    <script>
+            // Listens for all content to finish loading
+            document.addEventListener('DOMContentLoaded', function() {
+    
+                // Two functions that assign or remove an addtional css class to the "line" class.  
+                //This cause the transition to occure when the button is pressed and then stop when the button is released.
+                
+                // adds the trans class to the line class
+                document.getElementById("trans").onclick = function() {
+                    document.getElementsByClassName("box")[0].classList.add("translate");
+                }
+
+                document.getElementById("rot").onclick = function() {
+                    document.getElementsByClassName("rectwithwords")[0].classList.add("rotate");
+                }
+
+                document.getElementById("scl").onmouseover = function() {
+                    document.getElementsByClassName("box")[1].classList.add("scaleitbigger");
+                }
+                 
+                document.getElementById("scl").onmouseout = function() {
+                    document.getElementsByClassName("box")[1].classList.remove("scaleitbigger");
+                } 
+
+                document.getElementById("starwars").onclick = function() {
+                    document.getElementById("starwars").className = "starwarsH";
+                }
+
+            }, false);
+
+         </script>
+    <style>
+        .box{
+            margin-left: 100px;
+            width: 30px;
+            height: 30px;
+            background: limegreen;
+        }
+        .box.translate{
+            width: 50px;
+            height: 50px;
+            background-color: purple;
+            -ms-transform: translate(200px,50px);
+            -webkit-transform: translate(200px,50px);
+            transform: translate(100px,50px);
+        }
+        .box.scaleitbigger{
+            background-color: blue;
+            -ms-transform: scale(6,4); 
+            -webkit-transform: scale(6,4);
+            transform: scale(6,4); 
+        }
+        .rectwithwords{
+            margin-left: 100px;
+            width: 500px;
+            height: 75px;
+            background: limegreen;
+        }
+        .rectwithwords.rotate{
+            background: red;
+            -ms-transform: rotate(75deg);
+            -webkit-transform: rotate(75deg);
+            transform: rotate(75deg);
+        }
+        .skewy:hover{
+            margin-left: 100px;
+            width: 300px;
+            height: 75px;
+            background: limegreen;
+            -ms-transform: skewY(-34deg);
+            -webkit-transform: skewY(-34deg);
+            transform: skewY(-34deg);
+        }
+        .skewx:hover{
+            margin-left: 100px;
+            width: 300px;
+            height: 75px;
+            background: limegreen;
+            -ms-transform: skewX(33deg);
+            -webkit-transform: skewX(33deg);
+            transform: skewX(33deg);
+        }
+        .skew:hover{
+            -ms-transform: skew(25deg,25deg);
+            -webkit-transform: skew(25deg,25deg);
+            transform: skew(25deg,25deg);
+        }
+        .matrix:hover{
+            -ms-transform: matrix(1,.15,.15,1,50,-50);
+            -webkit-transform: matrix(1,.15,.15,1,50,-50);
+            transform: matrix(1,.15,.15,1,50,-50);
+        }
+        .starwars{
+            margin: 150px;
+            width: 300px;
+            height: 300px;
+            position: relative;
+            -webkit-perspective: 250px; /* Safari 4-8  */
+            perspective: 250px;
+
+        }
+        .starwarsH{
+            color: gold;
+            text-align:justify;
+            font-family: 'Pathway Gothic One', sans-serif;
+            position: relative;
+            padding: 40px;
+            background-color: red;
+            background: black;
+            -webkit-transform-style: preserve-3d;
+            -webkit-transform: rotateX(50deg);
+            transform-style: preserve-3d;
+            transform: rotateX(50deg);
+        }
+        .blackbackground{
+            position: relative;
+            width: 600px;
+            height: 400px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<h1>Topic 12 - Designing, Defining, and Triggering CSS3 Transforms</h1>
+<br>
+<br>
+<br>
+<br>
+<p>Click on the green box below.</p>
+<div id="trans" class="box"></div>
+<br>
+<br>
+<br>
+<br>
+<div id="rot" class="rectwithwords">
+    <p>On click this div will rotate 75 degrees!</p>
+</div>
+<br>
+<br>
+<br>
+<br>
+<p>Hover you mouse over the green box below.</p>
+<div id="scl" class="box"></div>
+<br>
+<br>
+<div id="skx" class="rectwithwords skewx">
+    <p>Hover over div with mouse will skew this div along the X-axis by 33 degrees</p>
+</div>
+<br>
+<br>
+<div id="sky" class="rectwithwords skewy">
+    <p>Hover over div with mouse will skew this div along the Y-axis by -34 degrees</p>
+</div>
+<br>
+<br>
+<div id="skw" class="rectwithwords skew">
+    <p>over over div with mouse  will skew it along both X-axix Y-axis by 25 degrees</p>
+</div>
+<br>
+<br>
+<div id="mtrx" class="rectwithwords matrix">
+    <p>Hover over div with mouse implements the matrix transform. 
+        Parameters are: matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
+        as used in this example "matrix(1,.15,.15,1,50,-50);"
+    </p>
+</div>
+<br>
+
+<br>
+<div class="blackbackground">
+<div id="star" class="starwars">
+    <div id="starwars" class="starwarsH">
+        <center>Episode IV<br>
+        A NEW HOPE<br><br></center>
+        It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire. During the battle, Rebel spies managed to steal secret plans to the Empire’s ultimate weapon, the DEATH STAR    </div>
+</div></div>
+<br>
+<br>
+<br>
+<p></p>
+
+</body>
+</html>
