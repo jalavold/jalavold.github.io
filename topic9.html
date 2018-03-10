@@ -10,14 +10,24 @@
             document.getElementById("buttonexample").onclick = function() {
                 document.getElementById("growtransformanimate").className = "growtransformanimate";
             }
-            document.getElementById("ontouchstartdiv").ontouchstart= function() {
-                document.getElementById("ontouchstartdiv").className = "growtransformanimate";
+
+            document.getElementById("ontouchstartdiv").ontouchstart = growtransformanimate();
+            document.getElementById("ontouchstartdiv").onclick = growtransformanimate();
+            document.getElementById("grow").ontouchstart = function() {
+                document.getElementById("grow").className = ".basicdiv .growhover";
             }
+            document.getElementById("grow").ontouchend = function() {
+                document.getElementById("grow").className = "";
+            }
+
+
         }, false);
 
         window.onload(alert("window.onload event just triggered!!!"));
             
-        
+        function growtransformanimate(){
+            document.getElementById("ontouchstartdiv").className = "growtransformanimate";
+        }
     </script>
 
     <style>
@@ -30,7 +40,7 @@
             transition: width 3s, 2s;
         }
 
-        #grow:hover {
+        #grow:hover, .growhover {
             width: 800px;
             height: 30px;
         }
@@ -44,7 +54,7 @@
             transition: width 3s, 2s;
         }
 
-        #growtransform:hover{
+        #growtransform:hover, .growtranformhover{
             width: 300px;
             height: 300px;
             border-radius: 150px;
