@@ -2,8 +2,129 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script>
+        
+        // Listens for all content to finish loading
+        document.addEventListener('DOMContentLoaded', function() {
+            alert("DOM content has loaded!");
+            document.getElementById("buttonexample").onclick = function() {
+                document.getElementById("growtransformanimate").className = "growtransformanimate";
+            }
+            document.getElementById("ontouchdiv").ontouchstart= function() {
+                document.getElementById("ontouchdiv").className = "growtransformanimate";
+            }
+        }, false);
+
+        window.onload(alert("window.onload event just triggered!!!"));
+            
+        
+    </script>
+
+    <style>
+        #grow, .basicdiv{
+            width: 30px;
+            height: 30px;
+            background: limegreen;
+            /* webkit is used for Safari compatibility */
+            -webkit-transition: width 3s, height 2s;
+            transition: width 3s, 2s;
+        }
+
+        #grow:hover {
+            width: 800px;
+            height: 30px;
+        }
+
+        #growtransform{
+            width: 100px;
+            height: 100px;
+            background: limegreen;
+            /* webkit is used for Safari compatibility */
+            -webkit-transition: width 3s, height 2s;
+            transition: width 3s, 2s;
+        }
+
+        #growtransform:hover{
+            width: 300px;
+            height: 300px;
+            border-radius: 150px;
+
+            /* again for Safari compatibility */
+            -webkit-transform: rotate(360deg); 
+            transform: rotate(360deg);
+        }
+
+        .growtransformanimate{
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            background: limegreen;
+            position: relative;
+            /* again for Safari compatibility */
+            -webkit-animation-name: trippy; 
+            -webkit-animation-duration: 4s; 
+            -webkit-animation-iteration-count: infinite; 
+            animation-name: trippy;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+
+        }
+
+            /* Safari 4.0 - 8.0 */
+        @-webkit-keyframes trippy {
+            0%   {background-color:pink; left:0px; top:0px;}
+            25%  {background-color:orange; left:100px; top:0px;}
+            50%  {background-color:purple; left:0px; top:100px;}
+            75%  {background-color:turquoise; left:100px; top:100px;}
+            100% {background-color:lime; left:0px; top:0px;}
+        }
+
+        /* Standard syntax */
+        @keyframes trippy {
+            0%   {background-color:pink; left:0px; top:0px;}
+            25%  {background-color:orange; left:100px; top:0px;}
+            50%  {background-color:purple; left:0px; top:100px;}
+            75%  {background-color:turquoise; left:100px; top:100px;}
+            100% {background-color:lime; left:0px; top:0px;}
+        }
+
+        .line{
+            width: 30px;
+            height: 3px;
+            background: limegreen;
+            /* webkit is used for Safari compatibility */
+            -webkit-transition: width 3s, height 2s;
+            transition: width 3s, 2s;
+
+        }
+
+        .line.trans{
+            width: 800px;
+            height: 3px;
+        }
+
+    </style>
 </head>
-<body>
-<h1>Topic 9 - Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events</h1>
+<body onload="alert('body onload just triggered');">
+    <h1>Topic 9 - Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events</h1>
+
+    <p>You can trigger actions to happen based on the DOM loading completely.  The alerts that were displayed when the page loaded were triggered by windows.onLoad(),
+        by the body tags onLoad event or you can add a 'DOMContentLoaded' event listener that will runs a javascript function.  
+    </p>
+    <br>
+    <p>This is a basic transition that increases the width of a colored div from 30px to 800px when a mouse is hovering over the div.
+            The timing is set for 3 seconds for width and 2 seconds for the height. 
+    </p>
+    <div id="grow"></div>
+    <p>This transition is similar to above with a transform added so it will rotate the div by 360 degrees. As it spins it will become a circle. </p>
+    <div id="growtransform"></div>
+    <p>This transition makes a div circular and the div travels in an hour glass shaped path while changing colors. <br>
+    <button type="button" id="buttonexample">Click to begin animation/transformation</button> </p>
+
+    <div id="growtransformanimate"></div>
+    <p>Example of ontouchstart</p>
+    <div id="ontouchstartdiv" class="basicdiv"></div>
+
+
 </body>
 </html>
