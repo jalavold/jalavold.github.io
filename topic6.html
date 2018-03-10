@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        div{
+            
+            display: block;
+        }
+        .childdiv{
+            display:inline-block;
+            width: 100px;
+            height: 75px;
+            background-color: aquamarine;
+            border:1px solid blue;
+            box-sizing: border-box;
+        }
+        .newbgcolor{
+            background-color: dimgrey;
+        }
+    </style>
+    <script>
+            function appendChilddiv(){
+                var newdiv = document.createElement("div");
+                newdiv.className = "childdiv";
+                var maindiv = document.getElementById("main");
+                maindiv.appendChild(newdiv);
+            }
+            function removechilddiv(){
+                var maindiv = document.getElementById("main");
+                if (maindiv.lastElementChild){
+                    maindiv.removeChild(maindiv.lastElementChild);
+                } else {
+                    alert("No children to delete!");
+                }
+            }
+            function insertbeforefirstchild(){
+                var newdiv = document.createElement("div");
+                newdiv.className = "childdiv newbgcolor";
+                var maindiv = document.getElementById("main");
+                maindiv.insertBefore(newdiv, maindiv.firstElementChild);
+            }
+            function changedivcolor(){
+                var maindiv = document.getElementById("main");
+                var allchildren = maindiv.children;
+                for (i = 0; i < allchildren.length; i++){
+                    if (i % 2 === 0 ){
+                        allchildren[i].style="background-color: black;";
+                    } else {
+                        allchildren[i].style="background-color: yellow;";
+                    }
+                    
+                }
+            }
+                
+    </script>
+</head>
+<body>
+<h2>Topic 6 - DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.</h2>
+<p><br>
+<button type="button" id="adddiv" onclick="appendChilddiv();"><pre><xmp>createElement then appendChild <div></xmp></pre></button>
+<button type="button" id="insertbefore" onclick="insertbeforefirstchild();"><pre><xmp>createElement then insertBefore firstElementChild <div> (will be gray)</xmp></pre></button>
+<button type="button" id="deldiv" onclick="removechilddiv();"><pre><xmp>removeChild lastElementChild <div></xmp></pre></button>
+<button type="button" id="chgcolordiv" onclick="changedivcolor();"><pre><xmp>Black and Yellow <div></xmp></pre></button>
+<br>
+</p>
+<div id="main">
+
+</div>
+</body>
+</html>
