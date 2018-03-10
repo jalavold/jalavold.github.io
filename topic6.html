@@ -18,6 +18,12 @@
         .newbgcolor{
             background-color: dimgrey;
         }
+        .bigdiv{
+            display:block;
+            width: 500px;
+            height: 400px;
+            background-color: lightgray;
+        }
     </style>
     <script>
             function appendChilddiv(){
@@ -52,17 +58,38 @@
                     
                 }
             }
+            function addnewbodydiv(){
+                var bodyelem = document.getElementsByTagName("body")[0];
+                var newdiv = document.createElement("div");
+                newdiv.className = "bigdiv";
+                newdiv.id="body" + bodyelem.getElementsByClassName("bigdiv").length;
+                bodyelem.appendChild(newdiv);
+            }
+            function addtobody0div(){
+                if (document.getElementById("body0")){
+                    var body0div = document.getElementById("body0");
+                    var newdiv = document.createElement("div");
+                    newdiv.className = "childdiv";
+                    body0div.appendChild(newdiv);
+                } else {
+                    alert("Need to create a big gray div by clicking button #5 first!");
+                }
+            }
                 
     </script>
 </head>
 <body>
 <h2>Topic 6 - DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.</h2>
-<p><br>
-<button type="button" id="adddiv" onclick="appendChilddiv();"><pre><xmp>createElement then appendChild <div></xmp></pre></button>
-<button type="button" id="insertbefore" onclick="insertbeforefirstchild();"><pre><xmp>createElement then insertBefore firstElementChild <div> (will be gray)</xmp></pre></button>
-<button type="button" id="deldiv" onclick="removechilddiv();"><pre><xmp>removeChild lastElementChild <div></xmp></pre></button>
-<button type="button" id="chgcolordiv" onclick="changedivcolor();"><pre><xmp>Black and Yellow <div></xmp></pre></button>
 <br>
+<p>The below buttons will manipulate the DOM by using the following methods:  createElement, appendChild, inserBefore, and removeChild. 
+    Also, lastElementChild, firstElementChild, children are used to navigate the children div elements.  </p>
+<p><br>
+<button type="button" id="adddiv" onclick="appendChilddiv();"><pre><xmp>1 - createElement then appendChild <div></xmp></pre></button>
+<button type="button" id="insertbefore" onclick="insertbeforefirstchild();"><pre><xmp>2 - createElement then insertBefore firstElementChild <div> (will be gray)</xmp></pre></button>
+<button type="button" id="deldiv" onclick="removechilddiv();"><pre><xmp>3 - removeChild lastElementChild <div></xmp></pre></button>
+<button type="button" id="chgcolordiv" onclick="changedivcolor();"><pre><xmp>4 - Black and Yellow <div></xmp></pre></button>
+<button type="button" id="newbodydiv" onclick="addnewbodydiv();"><pre><xmp>5 - createElement <div> then appendChild to the Body element.</xmp></pre></button>
+<button type="button" id="newbodydiv" onclick="addtobody0div();"><pre><xmp>6 - createElement <div> then appendChild to the div with id body0 </xmp></pre></button><br>
 </p>
 <div id="main">
 
