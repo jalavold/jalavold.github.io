@@ -10,10 +10,13 @@
     </style>
 
 <script>
-    var canvas1 = document.getElementById("canvas1");
-    var canvas1context = canvas1.getContext("2d");
-    canvas1context.font = "24px Arial";
-    canvas1context.strokeText("Just Do It!", 8, 40)
+    document.addEventListener('DOMContentLoaded', function() {
+        var canvas1 = document.getElementById("canvas1");
+        var canvas1context = canvas1.getContext("2d");
+        canvas1context.font = "24px Arial";
+        canvas1context.strokeText("Just Do It!", 8, 40)
+    }, false);
+    
 </script>
 
 </head>
