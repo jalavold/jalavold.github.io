@@ -15,6 +15,18 @@
         var canvas1context = canvas1.getContext("2d");
         canvas1context.font = "24px Arial";
         canvas1context.strokeText("Just Do It!", 8, 40)
+
+
+        var canvas2 = document.getElementById("canvas2");
+        var canvas2context = canvas2.gtetConext("2d");
+        canvas2context.fillStyle = "green";
+        canvas2context.beginPath();
+        canvas2context.moveTo(20,20);
+        canvas2context.lineTo(120,70);
+        canvas2context.lineTo(70,120);
+        canvas2context.lineTo(20,110);
+        canvas2context.closePath();
+        canvas2context.fill();
     }, false);
     
 </script>
@@ -43,6 +55,9 @@
         canvas is 200px wide by 75px tall.
     </p>
     <canvas id="canvas1" width="200" height="75"></canvas>
+
+    <canvas id="canvas2" width="250" height="250"></canvas>
+
 
 </body>
 </html>
