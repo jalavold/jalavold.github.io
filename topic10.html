@@ -11,12 +11,14 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+
+        // Code for text on canvas
         var canvas1 = document.getElementById("canvas1");
         var canvas1context = canvas1.getContext("2d");
         canvas1context.font = "24px Arial";
         canvas1context.strokeText("Just Do It!", 8, 40);
 
-
+        // Code for drawing a red triangle 
         var canvas2 = document.getElementById("canvas2");
         var canvas2context = canvas2.getContext("2d");
         canvas2context.fillStyle = "rgb(200,0,0)";
@@ -27,6 +29,16 @@
         canvas2context.lineTo(0,0);
         canvas2context.closePath();
         canvas2context.fill();
+
+        // Code for drawing the gradient
+        var canvas3 = document.getElementById("canvas3");
+        var canvas3context = canvas1.getContext("2d");
+        var grad = canvas3context.createLinearGradient(0,0,500,0);
+        grad.addColorStop(0,"purple");
+        grad.addColorStop(1,"pink");
+        canvas3context.fillStyle = grad;
+        canvas3context.fillRect(10,10,150,80);
+
     }, false);
     
 </script>
@@ -60,6 +72,11 @@
         Below a red triangle is drawn on a second canvas.
     </p>
     <canvas id="canvas2" width="250" height="250"></canvas>
+    <br>
+    <p>
+        Below is a gradient example from Purple to Pink.
+    </p>
+    <canvas id="canvas3" width="500" height="50"></canvas>
 
 
 </body>
