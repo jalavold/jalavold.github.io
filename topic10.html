@@ -21,10 +21,10 @@
         var canvas2context = canvas2.getContext("2d");
         canvas2context.fillStyle = "rgb(200,0,0)";
         canvas2context.beginPath();
-        canvas2context.moveTo(20,20);
+        canvas2context.moveTo(0,0);
         canvas2context.lineTo(80,80);
         canvas2context.lineTo(80,20);
-        canvas2context.lineTo(20,20);
+        canvas2context.lineTo(0,0);
         canvas2context.closePath();
         canvas2context.fill();
     }, false);
@@ -55,7 +55,10 @@
         canvas is 200px wide by 75px tall.
     </p>
     <canvas id="canvas1" width="200" height="75"></canvas>
-
+    <br>
+    <p>
+        Below a red triangle is drawn on a second canvas.
+    </p>
     <canvas id="canvas2" width="250" height="250"></canvas>
 
 
