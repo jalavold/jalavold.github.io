@@ -2,8 +2,134 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script>
+        // Listens for all content to finish loading
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // Two functions that assign or remove an addtional css class to the "line" class.  
+            //This cause the transition to occure when the button is pressed and then stop when the button is released.
+            
+            // adds the trans class to the line class
+            document.getElementById("triggertrans").onmousedown = function() {
+                document.getElementsByClassName("line")[0].classList.add("trans");
+            }
+        
+            // removes the trans class from the line class
+            document.getElementById("triggertrans").onmouseup= function() {
+                document.getElementsByClassName("line")[0].classList.remove("trans");
+            }
+        }, false);   
+    </script>
+    <style>
+        #grow{
+            width: 30px;
+            height: 30px;
+            background: limegreen;
+            /* webkit is used for Safari compatibility */
+            -webkit-transition: width 3s, height 2s;
+            transition: width 3s, 2s;
+        }
+
+        #grow:hover {
+            width: 800px;
+            height: 30px;
+        }
+
+        #growtransform{
+            width: 100px;
+            height: 100px;
+            background: limegreen;
+            /* webkit is used for Safari compatibility */
+            -webkit-transition: width 3s, height 2s;
+            transition: width 3s, 2s;
+        }
+
+        #growtransform:hover {
+            width: 300px;
+            height: 300px;
+            border-radius: 150px;
+
+            /* again for Safari compatibility */
+            -webkit-transform: rotate(360deg); 
+            transform: rotate(360deg);
+        }
+
+        #growtransformanimate{
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            background: limegreen;
+            position: relative;
+            /* again for Safari compatibility */
+            -webkit-animation-name: trippy; 
+            -webkit-animation-duration: 4s; 
+            -webkit-animation-iteration-count: infinite; 
+            animation-name: trippy;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+
+        }
+
+            /* Safari 4.0 - 8.0 */
+        @-webkit-keyframes trippy {
+            0%   {background-color:pink; left:0px; top:0px;}
+            25%  {background-color:orange; left:200px; top:0px;}
+            50%  {background-color:purple; left:200px; top:200px;}
+            75%  {background-color:turquoise; left:0px; top:200px;}
+            100% {background-color:lime; left:0px; top:0px;}
+        }
+
+        /* Standard syntax */
+        @keyframes trippy {
+            0%   {background-color:pink; left:0px; top:0px;}
+            25%  {background-color:orange; left:200px; top:0px;}
+            50%  {background-color:purple; left:200px; top:200px;}
+            75%  {background-color:turquoise; left:0px; top:200px;}
+            100% {background-color:lime; left:0px; top:0px;}
+        }
+
+        .line{
+            width: 30px;
+            height: 3px;
+            background: limegreen;
+            /* webkit is used for Safari compatibility */
+            -webkit-transition: width 3s, height 2s;
+            transition: width 3s, 2s;
+
+        }
+
+        .line.trans{
+            width: 800px;
+            height: 3px;
+        }
+
+    </style>
 </head>
 <body>
-<h1>Topic 11 - Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries</h1>
+    <h1>Topic 11 - Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries</h1>
+    <p>This is a basic transition that increases the width of a colored div from 30px to 800px when a mouse is hovering over the div.
+        the timing is set for 3 seconds for width and 2 seconds for the height. </p>
+    <div id="grow"></div>
+    <p>This transition is similar to above with a transform added so it will rotate the div by 360 degrees. As it spins it will become a circle. </p>
+    <div id="growtransform"></div>
+    <p>This transition make a div circular and the div travels in an square path while changing colors. </p>
+    <div id="growtransformanimate"></div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <p>Click on the "Trigger Transitions" button with any mouse button (left, right, center/wheel) and hold to make line grow.  
+        Release mouse button and the line will shrink back to it's original size.  To create this effect two JavaScript 
+        functions were created for the button's "onmousedown" and "onmouseup" events.
+    </p>
+    <div class="line"></div>
+    <button id="triggertrans" type="button">Trigger Transitions</button>
+
 </body>
 </html>
