@@ -64,7 +64,7 @@
 
                 if(typeof(Storage) !== "undefined") {
                     if (localStorage.getItem("carstring")){
-                    var arrayOfCars = JSON.parse(localStorage.getItem("carstring"));
+                    var arrayOfCars = JSON.parse("[" + localStorage.getItem("carstring") + "]");
                     }
                     arrayOfCars[arrayOfCars.length] = carsArray;
                     localStorage.setItem("carstring", JSON.stringify(arrayOfCars));
