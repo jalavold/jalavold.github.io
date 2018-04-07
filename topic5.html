@@ -63,11 +63,16 @@
                 carsArray.push(document.getElementById("caryear").value);
                 var arrayOfCars = [];    
                 if(typeof(Storage) !== "undefined") {
-                    if (localStorage.getItem("carstring")){
-                    var savedArrayOfCars = JSON.parse(localStorage.getItem("carstring"));
+                    if (localStorage.getItem("carstring") === null) {
+                        arrayOfCars.push(carsArray);
+                        localStorage.setItem("carstring", JSON.stringify(arrayOfCars));
+                    
+                    }else{
+                        var savedArrayOfCars = JSON.parse(localStorage.getItem("carstring"));
+                        savedArrayOfCars.push(carsArray);
+                        localStorage.setItem("carstring", JSON.stringify(savedArrayOfCars));
                     }
-                    arrayOfCars.push(carsArray);
-                    localStorage.setItem("carstring", JSON.stringify(arrayOfCars));
+                    
                 } else {
                     alert("Sorry, your browser does not support web storage...");
                 }
