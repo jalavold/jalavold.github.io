@@ -63,20 +63,20 @@
                 carsArray.push(document.getElementById("caryear").value);
                 var arrayOfCars = [];    
                 if(typeof(Storage) !== "undefined") {
-                    if (localStorage.getItem("carstring") === null) {
+                    if (localStorage.getItem("carsstring") === null) {
                         arrayOfCars.push(carsArray);
-                        localStorage.setItem("carstring", JSON.stringify(arrayOfCars));
+                        localStorage.setItem("carsstring", JSON.stringify(arrayOfCars));
                     
                     }else{
-                        var savedArrayOfCars = JSON.parse(localStorage.getItem("carstring"));
+                        var savedArrayOfCars = JSON.parse(localStorage.getItem("carsstring"));
                         savedArrayOfCars.push(carsArray);
-                        localStorage.setItem("carstring", JSON.stringify(savedArrayOfCars));
+                        localStorage.setItem("carsstring", JSON.stringify(savedArrayOfCars));
                     }
                     
                 } else {
                     alert("Sorry, your browser does not support web storage...");
                 }
-                var carsArrayLocalStorage = JSON.parse(localStorage.getItem("carstring"));
+                var carsArrayLocalStorage = JSON.parse(localStorage.getItem("carsstring"));
                 writecarshtml(carsArrayLocalStorage);
                 document.getElementById("carmake").value="";
                 document.getElementById("carmodel").value="";
